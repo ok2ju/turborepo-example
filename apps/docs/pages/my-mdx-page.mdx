@@ -1,0 +1,58 @@
+# My MDX page
+
+This is a list in markdown:
+
+- One
+- Two
+- Three
+
+Checkout my React component:
+
+Tailwind app configuration:
+https://tailwindcss.com/docs/content-configuration#working-with-third-party-libraries
+
+Custom plugin:
+
+- https://tailwindcss.com/docs/plugins#adding-utilities
+- https://github.com/saadeghi/daisyui/blob/master/src/index.js [daisyui plugin sample]
+
+Tailwind theme:
+https://www.skies.dev/tailwind-themes
+
+Carbon color tokens example:
+https://carbondesignsystem.com/guidelines/color/usage/
+https://carbondesignsystem.com/components/tabs/style/
+
+btn-primary: #4506cb
+
+bg-button-primary
+text-button-primary
+
+dark:
+
+// Docs: https://tailwindcss.com/docs/theme#core-plugins
+
+{
+theme: {
+colors: {
+blue: {
+'100': '#435512',
+'200': '#435512',
+}
+},
+color: ({ theme }) => ({
+'btn-primary': theme('colors.blue.200'),
+'btn-secondary': theme('colors.blue.100'),
+...theme('colors'),
+}),
+backgroundColor: ({ theme }) => ({
+'btn-primary': theme('colors.blue.100'),
+'btn-secondary': theme('colors.blue.200'),
+...theme('colors'),
+})
+}
+}
+
+// Usage
+text-btn-primary
+bg-btn-primary

@@ -5,6 +5,7 @@
   "types": "./index.tsx",
   "license": "MIT",
   "scripts": {
+    "build": "tsup index.tsx --format cjs --dts",
     "lint": "TIMING=1 eslint \"**/*.ts*\""
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "eslint-config-custom": "*",
     "react": "^18.2.0",
     "tsconfig": "*",
+    "tsup": "^6.5.0",
     "typescript": "^4.5.2"
   }
 }
