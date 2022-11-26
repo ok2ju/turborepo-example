@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question
+    url: https://support.te-example.com/contact
+    about: Contact Support if you're having trouble with te-example packages.

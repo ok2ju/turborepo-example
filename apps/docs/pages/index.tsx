@@ -1,4 +1,4 @@
-import { Button } from "ui";
+import { Button } from "@te/core";
 
 export default function Docs() {
   return (

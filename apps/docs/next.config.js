@@ -14,7 +14,7 @@ const withMDX = require("@next/mdx")({
 module.exports = withMDX({
   reactStrictMode: true,
   experimental: {
-    transpilePackages: ["ui"],
+    transpilePackages: ["@te/core"],
   },
   // Append the default value with md extensions
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],

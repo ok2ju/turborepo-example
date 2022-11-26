@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@te/docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,7 @@
     "next": "13.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "*"
+    "@te/core": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -24,10 +24,10 @@
     "@types/react-dom": "^18.0.7",
     "autoprefixer": "^10.4.13",
     "eslint": "7.32.0",
-    "eslint-config-custom": "*",
+    "eslint-config-te": "*",
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4",
-    "tsconfig": "*",
+    "@te/tsconfig": "*",
     "typescript": "^4.5.3"
   }
 }
