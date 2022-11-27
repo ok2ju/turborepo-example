@@ -3,23 +3,27 @@
   "version": "0.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist",
+    "./styles.css": "./dist/styles.css"
+  },
   "license": "MIT",
-  "files": [
-    "dist/**"
-  ],
   "scripts": {
     "build": "tsup ./src/index.ts --format cjs --dts --external react",
-    "dev": "tsup ./src/index.ts --format esm,cjs --watch --dts --external react",
+    "dev": "concurrently \"tsup ./src/index.ts --format esm,cjs --dts --external react --watch\" \"tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch\"",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
+    "@te/tailwind-config": "*",
+    "@te/tsconfig": "*",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
+    "concurrently": "^7.6.0",
     "eslint": "^8.28.0",
     "eslint-config-te": "*",
     "react": "^18.2.0",
-    "@te/tsconfig": "*",
+    "tailwindcss": "^3.2.4",
     "tsup": "^6.5.0",
     "typescript": "^4.9.3"
   }

@@ -26,6 +26,7 @@
     "eslint": "7.32.0",
     "eslint-config-te": "*",
     "postcss": "^8.4.19",
+    "@te/tailwind-config": "*",
     "tailwindcss": "^3.2.4",
     "@te/tsconfig": "*",
     "typescript": "^4.5.3"

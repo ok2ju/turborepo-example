@@ -1,4 +1,7 @@
-import * as React from "react";
 export const Button = () => {
-  return <button>Boop12</button>;
+  return (
+    <div className="rounded-md bg-slate-50">
+      <button>Boop</button>
+    </div>
+  );
 };
