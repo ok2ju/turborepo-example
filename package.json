@@ -11,9 +11,13 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build lint && changeset version && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.25.2",
     "eslint-config-custom": "*",
     "prettier": "latest",
     "prettier-plugin-tailwindcss": "^0.2.0",
