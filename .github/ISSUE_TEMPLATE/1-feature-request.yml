@@ -14,7 +14,7 @@ body:
       multiple: false
       label: Which project is this feature idea for?
       options:
-        - te-core
+        - core-react
     validations:
       required: true
   - type: textarea
