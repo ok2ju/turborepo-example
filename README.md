@@ -9,10 +9,10 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. I
 ### Apps and Packages
 
 - `docs`: a [Next.js](https://nextjs.org/) app
-- `te-core`: a stub React component library shared by `docs` application
+- `core-react`: a stub React component library shared by `docs` application
 - `eslint-config-te`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `te-tsconfig`: `tsconfig.json`s used throughout the monorepo
-- `te-tailwind-config`: `tailwind.config.js` shared `tailwindcss` configuration
+- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `tailwind-config`: `tailwind.config.js` shared `tailwindcss` configuration
 
 ### Build
 
