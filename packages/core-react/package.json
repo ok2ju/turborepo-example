@@ -12,7 +12,8 @@
     "build": "tsup ./src/index.ts --format cjs --dts --external react",
     "dev": "concurrently \"tsup ./src/index.ts --format esm,cjs --dts --external react --watch\" \"tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch\"",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@te/tailwind-config": "*",
