@@ -30,7 +30,7 @@ jobs:
 
       - name: Generate root Changelog
         id: rootChangelog
-        if: steps.changesets.outputs.published == 'true'
+        # if: steps.changesets.outputs.published == 'true'
         run: yarn changelog:root
 
       - name: Push root Changelog
