@@ -11,7 +11,7 @@ const getMergedPullRequests = async () => {
     owner: "ok2ju",
     repo: "turborepo-example",
     base: "main",
-    head: "turborepo-example:changeset-release/main",
+    head: "ok2ju:changeset-release/main",
     per_page: 100,
   });
 
