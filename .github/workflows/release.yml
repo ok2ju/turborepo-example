@@ -29,61 +29,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate root Changelog
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const { data } = await github.rest.pulls.list({
-              state: "all",
-              owner: "ok2ju",
-              repo: "turborepo-example",
-              base: "main",
-              head: "turborepo-example:changeset-release/main",
-              per_page: 100,
-            });
-
-            const mergedPrs = data.filter((pr) => pr.merged_at);
-
-            const prData = mergedPrs
-              .map((pr) => {
-                if (!pr.body) return;
-
-                let content = pr.body ?? "";
-                const parts = content.split("# Releases");
-                content = parts[1] || content;
-
-                const date = new Date(pr.merged_at ?? pr.updated_at).toLocaleDateString(
-                  "en-US",
-                  dateFormatOptions
-                );
-
-                const body = [
-                  "---",
-                  `title: Release date ${date}`,
-                  `releaseUrl: ${pr.html_url}`,
-                  `releaseDate: ${date}`,
-                  "---",
-                  "\n",
-                  `${content}`,
-                ];
-
-                return {
-                  id: pr.number,
-                  url: pr.html_url,
-                  body: body.join("\n"),
-                  date: date,
-                };
-              })
-              .filter(Boolean)
-              .map((pr) => {
-                if (!pr) return;
-              
-                if (!fs.existsSync(".changelog")) {
-                  fs.mkdirSync(".changelog");
-                }
-                return fs.promises.writeFile(`.changelog/${pr.date}.mdx`, pr.body);
-              });
+        id: rootChangelog
+        # if: steps.changesets.outputs.published == 'true'
+        run: yarn changelog:root
 
       - name: Push root Changelog
+        if: steps.changesets.outputs.published == 'true' && steps.rootChangelog.outcome == 'success'
+        # if: steps.rootChangelog.outcome == 'success'
         run: |
           git add -A
           git commit -m "Release root Changelog"
