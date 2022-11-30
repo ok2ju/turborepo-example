@@ -64,6 +64,10 @@ const writeChangelog = async (pullRequest) => {
   return fs.promises.writeFile(`.changelog/${pr.date}.md`, pr.body);
 };
 
-const pullRequests = await getMergedPullRequests();
-const content = pullRequests.map(getPullRequestData).filter(Boolean);
-await Promise.all([...content.map(writeChangelog)]);
+const generateChangelog = async () => {
+  const pullRequests = await getMergedPullRequests();
+  const content = pullRequests.map(getPullRequestData).filter(Boolean);
+  await Promise.all([...content.map(writeChangelog)]);
+};
+
+generateChangelog();
