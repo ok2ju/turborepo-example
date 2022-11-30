@@ -8,10 +8,10 @@ const octokit = new Octokit({
 const getMergedPullRequests = async () => {
   const { data } = await octokit.pulls.list({
     state: "all",
-    owner: "chakra-ui",
-    repo: "chakra-ui",
+    owner: "ok2ju",
+    repo: "turborepo-example",
     base: "main",
-    head: "chakra-ui:changeset-release/main",
+    head: "turborepo-example:changeset-release/main",
     per_page: 100,
   });
 
