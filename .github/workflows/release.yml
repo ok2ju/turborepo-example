@@ -36,6 +36,7 @@ jobs:
       - name: Push root Changelog
         if: steps.rootChangelog.outcome == 'success'
         run: |
+          git status
           git add -A
           git commit -m "Release root Changelog"
           git push origin master
