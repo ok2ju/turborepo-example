@@ -15,8 +15,6 @@ const getMergedPullRequests = async () => {
     per_page: 100,
   });
 
-  console.log("pullRequests", data);
-
   return data.filter((pr) => pr.merged_at);
 };
 
@@ -68,9 +66,7 @@ const writeChangelog = async (pullRequest) => {
 
 const generateChangelog = async () => {
   const pullRequests = await getMergedPullRequests();
-  console.log("merged pullRequests", pullRequests);
   const content = pullRequests.map(getPullRequestData).filter(Boolean);
-  console.log("pullRequests content", content);
   await Promise.all([...content.map(writeChangelog)]);
 };
 

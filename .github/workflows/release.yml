@@ -30,12 +30,11 @@ jobs:
 
       - name: Generate root Changelog
         id: rootChangelog
-        # if: steps.changesets.outputs.published == 'true'
+        if: steps.changesets.outputs.published == 'true'
         run: yarn changelog:root
 
       - name: Push root Changelog
-        if: steps.changesets.outputs.published == 'true' && steps.rootChangelog.outcome == 'success'
-        # if: steps.rootChangelog.outcome == 'success'
+        if: steps.rootChangelog.outcome == 'success'
         run: |
           git add -A
           git commit -m "Release root Changelog"
