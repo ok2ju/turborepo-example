@@ -35,8 +35,14 @@ jobs:
 
       - name: Push root Changelog
         if: steps.rootChangelog.outcome == 'success'
+        env:
+          CI_GIT_USERNAME: github-actions[bot]
+          CI_GIT_EMAIL: github-actions[bot]@users.noreply.github.com
         run: |
-          git status
+          git config --local user.email "${{ inputs.email }}"
+          git config --local user.name "${{ inputs.name }}"
+
+          git checkout -b "root-changelog"
           git add -A
           git commit -m "Release root Changelog"
-          git push origin master
+          git push origin root-changelog
