@@ -29,7 +29,11 @@ const getPullRequestData = (pullRequest) => {
 
   const date = new Date(
     pullRequest.merged_at ?? pullRequest.updated_at
-  ).toLocaleDateString("en-US", dateFormatOptions);
+  ).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   const body = [
     "---",
