@@ -39,8 +39,8 @@ jobs:
           CI_GIT_USERNAME: github-actions[bot]
           CI_GIT_EMAIL: github-actions[bot]@users.noreply.github.com
         run: |
-          git config --local user.email "${{ inputs.email }}"
-          git config --local user.name "${{ inputs.name }}"
+          git config --local user.email "${{ env.CI_GIT_EMAIL }}"
+          git config --local user.name "${{ env.CI_GIT_USERNAME }}"
 
           git checkout -b "root-changelog"
           git add -A
