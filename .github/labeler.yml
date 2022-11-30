@@ -1,0 +1,27 @@
+repo:
+  - "*"
+
+action:
+  - .github/workflows/**
+
+docs:
+  - apps/docs/**
+
+# Add 'test' label to any change to *.spec.js files within the source dir
+core:
+  - packages/core-react/**
+
+eslint-config:
+  - packages/eslint-config-te/**
+
+tailwind-config:
+  - packages/tailwind-config/**
+
+tsconfig:
+  - packages/tsconfig/**
+
+tests:
+  - packages/core-react/**/*.spec.ts
+
+release:
+  - packages/**/CHANGELOG.md
