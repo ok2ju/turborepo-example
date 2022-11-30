@@ -29,15 +29,14 @@ const getPullRequestData = (pullRequest) => {
   const parts = content.split("# Releases");
   content = parts[1] || content;
 
-  const date = new Date(pr.merged_at ?? pr.updated_at).toLocaleDateString(
-    "en-US",
-    dateFormatOptions
-  );
+  const date = new Date(
+    pullRequest.merged_at ?? pullRequest.updated_at
+  ).toLocaleDateString("en-US", dateFormatOptions);
 
   const body = [
     "---",
     `title: Release date ${date}`,
-    `releaseUrl: ${pr.html_url}`,
+    `releaseUrl: ${pullRequest.html_url}`,
     `releaseDate: ${date}`,
     "---",
     "\n",
@@ -45,8 +44,8 @@ const getPullRequestData = (pullRequest) => {
   ];
 
   return {
-    id: pr.number,
-    url: pr.html_url,
+    id: pullRequest.number,
+    url: pullRequest.html_url,
     body: body.join("\n"),
     date: date,
   };
@@ -61,12 +60,17 @@ const writeChangelog = async (pullRequest) => {
     fs.mkdirSync(".changelog");
   }
 
-  return fs.promises.writeFile(`.changelog/${pr.date}.md`, pr.body);
+  return fs.promises.writeFile(
+    `.changelog/${pullRequest.date}.md`,
+    pullRequest.body
+  );
 };
 
 const generateChangelog = async () => {
   const pullRequests = await getMergedPullRequests();
+  console.log("merged pullRequests", pullRequests);
   const content = pullRequests.map(getPullRequestData).filter(Boolean);
+  console.log("pullRequests content", content);
   await Promise.all([...content.map(writeChangelog)]);
 };
 
