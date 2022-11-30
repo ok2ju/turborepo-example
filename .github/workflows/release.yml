@@ -23,26 +23,14 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
       - name: Create Release Pull Request
         uses: changesets/action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate root Changelog
-        id: rootChangelog
-        # if: steps.changesets.outputs.published == 'true'
-        run: yarn changelog:root
-
-      - name: Push root Changelog
-        if: steps.rootChangelog.outcome == 'success'
-        env:
-          CI_GIT_USERNAME: github-actions[bot]
-          CI_GIT_EMAIL: github-actions[bot]@users.noreply.github.com
-        run: |
-          git config --local user.email "${{ env.CI_GIT_EMAIL }}"
-          git config --local user.name "${{ env.CI_GIT_USERNAME }}"
-
-          git checkout -b "root-changelog"
-          git add -A
-          git commit -m "Release root Changelog"
-          git push origin root-changelog
+        with:
+          title: Release - ${{ steps.date.outputs.date }}
+          commit: Release - ${{ steps.date.outputs.date }}
