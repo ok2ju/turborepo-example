@@ -66,7 +66,9 @@ const writeChangelog = async (pullRequest) => {
 
 const generateChangelog = async () => {
   const pullRequests = await getMergedPullRequests();
+  console.log("pullRequests", pullRequests);
   const content = pullRequests.map(getPullRequestData).filter(Boolean);
+  console.log("content", content);
   await Promise.all([...content.map(writeChangelog)]);
 };
 
