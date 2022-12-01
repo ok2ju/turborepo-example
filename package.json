@@ -22,7 +22,6 @@
     "@changesets/cli": "^2.25.2",
     "eslint-config-custom": "*",
     "prettier": "latest",
-    "prettier-plugin-tailwindcss": "^0.2.0",
     "turbo": "latest"
   },
   "engines": {
