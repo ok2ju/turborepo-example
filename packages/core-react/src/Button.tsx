@@ -1,6 +1,6 @@
 export const Button = () => {
   return (
-    <div className="rounded-md bg-slate-50">
+    <div className="rounded-md bg-gray-10">
       <button>Boop</button>
     </div>
   );
