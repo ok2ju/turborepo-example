@@ -1,5 +1,6 @@
 const colors = require("./colors");
 
+// https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 module.exports = {
   content_local: [
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -18,22 +19,27 @@ module.exports = {
       cyan: colors.cyan,
       purple: colors.purple,
       magenta: colors.magenta,
+      qwerty: colors.magenta,
     },
-    color: ({ theme }) => ({
-      "text-primary": theme("colors.gray.100"),
-      "text-secondary": theme("colors.gray.100"),
-      "text-placeholder": theme("colors.gray.100"),
-      "text-on-color": theme("colors.gray.100"),
-      "text-helper": theme("colors.gray.100"),
-      "text-disabled": theme("colors.gray.100"),
-      "text-error": theme("colors.gray.100"),
+    textColor: ({ theme }) => ({
       ...theme("colors"),
+      primary: theme("colors.green.100"),
+      secondary: theme("colors.gray.100"),
+      placeholder: theme("colors.gray.100"),
+      "on-color": theme("colors.gray.100"),
+      helper: theme("colors.gray.100"),
+      disabled: theme("colors.gray.100"),
+      error: theme("colors.gray.100"),
     }),
     backgroundColor: ({ theme }) => ({
+      ...theme("colors"),
       background: theme("colors.gray.100"),
       "background-brand": theme("colors.gray.100"),
       "background-inverse": theme("colors.gray.100"),
+    }),
+    borderColor: ({ theme }) => ({
       ...theme("colors"),
+      brand: "blue",
     }),
   },
   plugins: [],

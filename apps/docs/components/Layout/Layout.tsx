@@ -23,7 +23,7 @@ const Layout = ({ nav, menu, children }: LayoutProps) => {
               <Link
                 key={item.key}
                 href={item.slug}
-                className="text-base text-gray-500 hover:text-gray-900"
+                className="text-sm text-gray-500 hover:text-gray-900"
               >
                 {item.title}
               </Link>

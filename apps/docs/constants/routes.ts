@@ -47,6 +47,22 @@ export const menu = [
     ],
   },
   {
+    key: "design",
+    section: "Design",
+    pages: [
+      {
+        key: "colors",
+        title: "Colors",
+        slug: "/design/colors",
+      },
+      {
+        key: "typography",
+        title: "Typography",
+        slug: "/design/typography",
+      },
+    ],
+  },
+  {
     key: "components",
     section: "Components",
     pages: [
