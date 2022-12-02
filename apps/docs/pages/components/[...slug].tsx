@@ -2,10 +2,11 @@ import { Fragment } from "react";
 import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import { getAllFrontmatter, getMdxBySlug } from "../../lib/mdx";
 import { Button } from "@te/core";
+import { getAllFrontmatter, getMdxBySlug } from "../../lib/mdx";
+import { MDXComponents } from "../../components/MDX";
 
-const components = { Button };
+const components = { ...MDXComponents, Button };
 
 // TODO: Fix type definitions
 export default function ComponentsDoc({ source }: { source: any }) {
