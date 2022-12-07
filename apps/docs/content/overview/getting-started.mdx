@@ -7,3 +7,45 @@ name: getting_started
 # Getting started
 
 <Description>A quick tutorial to get you up and running.</Description>
+
+#### Install core library
+
+Install the component from your command line.
+
+```js
+npm install @te/core-react
+```
+
+#### Import components
+
+Import desired component from library.
+
+```js
+import { Button } from "@te/core-react";
+```
+
+#### Apply styling
+
+Choose appropriate styling approach.
+
+```css
+// globals.css
+import "@te/core/styles.css";
+```
+
+or if you are using `tailwind-cli`
+
+```js
+// tailwind.config.js
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    ...config.content_local,
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: config.theme,
+  plugins: config.plugins,
+};
+```

@@ -1,27 +1,46 @@
 import { PropsWithChildren, ReactElement } from "react";
+import { DocCodeBlock, Langs } from "../DocCodeBlock";
 
 export const MDXComponents = {
   h1: ({ children }: PropsWithChildren) => (
     <h1 className="text-4xl font-medium text-gray-90 mb-2">{children}</h1>
   ),
   h2: ({ children }: PropsWithChildren) => (
-    <h2 className="text-3xl font-medium text-gray-90 mb-2">{children}</h2>
+    <h2 className="text-3xl font-medium text-gray-90 mt-12 mb-2">{children}</h2>
   ),
   h3: ({ children }: PropsWithChildren) => (
-    <h3 className="text-2xl font-medium text-gray-90 mb-2">{children}</h3>
+    <h3 className="text-2xl font-medium text-gray-90 mt-12 mb-2">{children}</h3>
   ),
   h4: ({ children }: PropsWithChildren) => (
-    <h4 className="text-xl font-medium text-gray-90 mb-2">{children}</h4>
+    <h4 className="text-xl font-medium text-gray-90 mt-12 mb-2">{children}</h4>
   ),
   h5: ({ children }: PropsWithChildren) => (
-    <h5 className="text-lg font-medium text-gray-90 mb-2">{children}</h5>
+    <h5 className="text-lg font-medium text-gray-90 mt-12 mb-2">{children}</h5>
   ),
   h6: ({ children }: PropsWithChildren) => (
-    <h6 className="text-base font-medium text-gray-90 mb-2">{children}</h6>
+    <h6 className="text-base font-medium text-gray-90 mt-12 mb-2">
+      {children}
+    </h6>
   ),
   p: ({ children }: PropsWithChildren) => (
     <p className="text-lg font-light text-gray-80 mb-2">{children}</p>
   ),
+  code: (props: PropsWithChildren<{ className: string }>) => {
+    const { className, children } = props;
+
+    if (className) {
+      const lang = className.split("-")[1] as keyof typeof Langs;
+      const code = typeof children === "string" ? children : "";
+      return <DocCodeBlock language={Langs[lang]} code={code} />;
+    }
+    return (
+      <code
+        {...props}
+        className="text-sm p-1 bg-[#fbfaff] text-[#5746af] rounded-sm"
+      />
+    );
+  },
+  CodeBlock: DocCodeBlock,
   Description: ({
     children,
   }: {
