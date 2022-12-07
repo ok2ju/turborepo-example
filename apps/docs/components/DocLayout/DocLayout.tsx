@@ -22,7 +22,15 @@ const Layout = ({ menu, toc, children }: LayoutProps) => {
         <div className="flex justify-between items-center h-[72px]">
           <Link href="/" className="flex items-center justify-start">
             <span className="sr-only">Your Company</span>
-            <p className="ml-4 font-medium">Design System</p>
+            <svg width="34" height="36" viewBox="0 0 44 46" fill="none">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M43.3559 16.0838L38.1846 6.99571L27.0928 13.768V0.423737H16.9072V13.768L5.80333 6.99571L0.644073 16.0838L11.9654 22.9938L0.644073 29.9162L5.81541 39.0043L16.9072 32.2195V45.5763H27.0928V32.2321L38.1846 39.0043L43.3559 29.9162L32.0225 22.9938L43.3559 16.0838Z"
+                fill="#FF0000"
+              />
+            </svg>
+            <p className="ml-3 font-medium">Design System</p>
           </Link>
         </div>
       </div>
