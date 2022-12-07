@@ -15,6 +15,11 @@ export const nav: Array<NavItem> = [
     title: "About",
     slug: "/about",
   },
+  {
+    key: "contact",
+    title: "Contact us",
+    slug: "/contacts",
+  },
 ];
 
 export interface MenuItem {
