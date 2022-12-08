@@ -28,7 +28,7 @@ export const DocCodeBlock = ({ code, language }: DocCodeBlockProps) => {
   const html = toHtml(result);
 
   return (
-    <div className="max-h-[400px] overflow-auto rounded-lg">
+    <div className="max-h-[400px] overflow-auto rounded-lg mt-5 mb-5">
       <pre className={`language-${language} px-[26px] py-5`}>
         <code dangerouslySetInnerHTML={{ __html: html }} />
       </pre>

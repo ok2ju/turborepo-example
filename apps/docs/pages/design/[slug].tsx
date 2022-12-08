@@ -23,18 +23,18 @@ export default function ComponentsDoc({ source }: { source: any }) {
 }
 
 export async function getStaticPaths() {
-  const frontmatters = getAllFrontmatter("overview");
+  const frontmatters = getAllFrontmatter("design");
 
   return {
     paths: frontmatters.map((fm: any) => ({
-      params: { slug: fm.slug.replace("overview/", "") },
+      params: { slug: fm.slug.replace("design/", "") },
     })),
     fallback: false,
   };
 }
 
 export async function getStaticProps(context: any) {
-  const source = await getMdxBySlug("overview/", context.params.slug);
+  const source = await getMdxBySlug("design/", context.params.slug);
   const mdxSource = await serialize(source, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],

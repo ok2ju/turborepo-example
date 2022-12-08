@@ -1,3 +1,4 @@
+const spacing = require("./spacing");
 const colors = require("./colors");
 
 // https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js
@@ -9,6 +10,9 @@ module.exports = {
   ],
   content_external: ["./node_modules/@te/core/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    spacing: {
+      ...spacing,
+    },
     colors: {
       gray: colors.gray,
       green: colors.green,
