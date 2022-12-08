@@ -5,6 +5,8 @@ import Table from "../Table";
 import SpacingTable from "../SpacingTable";
 import ColorsList from "../ColorsList";
 import ColorTokensTable from "../ColorTokensTable";
+import Playground from "../Playground";
+import * as Demos from "../demos";
 
 interface HeadingProps {
   id: string;
@@ -89,4 +91,6 @@ export const MDXComponents = {
   SpacingTable,
   ColorsList,
   ColorTokensTable,
+  Playground,
+  ...Demos,
 };
