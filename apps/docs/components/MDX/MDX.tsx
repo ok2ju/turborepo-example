@@ -1,27 +1,57 @@
 import { PropsWithChildren, ReactElement } from "react";
+import Link from "next/link";
 import { DocCodeBlock, Langs } from "../DocCodeBlock";
 import Table from "../Table";
 import SpacingTable from "../SpacingTable";
 import ColorsList from "../ColorsList";
+import ColorTokensTable from "../ColorTokensTable";
+
+interface HeadingProps {
+  id: string;
+}
 
 export const MDXComponents = {
-  h1: ({ children }: PropsWithChildren) => (
-    <h1 className="text-4xl font-medium text-gray-90 mb-3">{children}</h1>
+  h1: ({ id, children }: PropsWithChildren<HeadingProps>) => (
+    <Link href={`#${id}`}>
+      <h1 id={id} className="text-4xl font-medium text-gray-90 mb-3">
+        {children}
+      </h1>
+    </Link>
   ),
-  h2: ({ children }: PropsWithChildren) => (
-    <h2 className="text-3xl font-medium text-gray-90 mt-9 mb-3">{children}</h2>
+  h2: ({ id, children }: PropsWithChildren<HeadingProps>) => (
+    <Link href={`#${id}`}>
+      <h2 id={id} className="text-3xl font-medium text-gray-90 mt-9 mb-3">
+        {children}
+      </h2>
+    </Link>
   ),
-  h3: ({ children }: PropsWithChildren) => (
-    <h3 className="text-2xl font-medium text-gray-90 mt-9 mb-3">{children}</h3>
+  h3: ({ id, children }: PropsWithChildren<HeadingProps>) => (
+    <Link href={`#${id}`}>
+      <h3 id={id} className="text-2xl font-medium text-gray-90 mt-9 mb-3">
+        {children}
+      </h3>
+    </Link>
   ),
-  h4: ({ children }: PropsWithChildren) => (
-    <h4 className="text-xl font-medium text-gray-90 mt-9 mb-3">{children}</h4>
+  h4: ({ id, children }: PropsWithChildren<HeadingProps>) => (
+    <Link href={`#${id}`}>
+      <h4 id={id} className="text-xl font-medium text-gray-90 mt-9 mb-3">
+        {children}
+      </h4>
+    </Link>
   ),
-  h5: ({ children }: PropsWithChildren) => (
-    <h5 className="text-lg font-medium text-gray-90 mt-9 mb-3">{children}</h5>
+  h5: ({ id, children }: PropsWithChildren<HeadingProps>) => (
+    <Link href={`#${id}`}>
+      <h5 id={id} className="text-lg font-medium text-gray-90 mt-9 mb-3">
+        {children}
+      </h5>
+    </Link>
   ),
-  h6: ({ children }: PropsWithChildren) => (
-    <h6 className="text-base font-medium text-gray-90 mt-9 mb-3">{children}</h6>
+  h6: ({ id, children }: PropsWithChildren<HeadingProps>) => (
+    <Link href={`#${id}`}>
+      <h6 id={id} className="text-base font-medium text-gray-90 mt-9 mb-3">
+        {children}
+      </h6>
+    </Link>
   ),
   p: ({ children }: PropsWithChildren) => (
     <p className="text-lg font-light text-gray-80 mb-4">{children}</p>
@@ -41,6 +71,8 @@ export const MDXComponents = {
       />
     );
   },
+  a: (props: any) => <a {...props} className="text-blue-70 hover:underline" />,
+  li: (props: any) => <li {...props} className="[&_ul]:ml-6" />,
   CodeBlock: DocCodeBlock,
   Description: ({
     children,
@@ -56,4 +88,5 @@ export const MDXComponents = {
   Table,
   SpacingTable,
   ColorsList,
+  ColorTokensTable,
 };
