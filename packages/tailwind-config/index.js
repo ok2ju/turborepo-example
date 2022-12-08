@@ -14,6 +14,11 @@ module.exports = {
       ...spacing,
     },
     colors: {
+      inherit: "inherit",
+      current: "currentColor",
+      transparent: "transparent",
+      black: "#000",
+      white: "#fff",
       gray: colors.gray,
       green: colors.green,
       red: colors.red,
