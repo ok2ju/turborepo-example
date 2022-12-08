@@ -65,6 +65,11 @@ export const menu = [
         title: "Typography",
         slug: "/design/typography",
       },
+      {
+        key: "spacing",
+        title: "Spacing",
+        slug: "/design/spacing",
+      },
     ],
   },
   {

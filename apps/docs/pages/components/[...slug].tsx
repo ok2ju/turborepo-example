@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import remarkGfm from "remark-gfm";
 import { Button } from "@te/core";
 import { getAllFrontmatter, getMdxBySlug } from "../../lib/mdx";
 import { MDXComponents } from "../../components/MDX";
@@ -37,7 +38,14 @@ export async function getStaticProps(context: any) {
     "components/",
     context.params.slug.join("/")
   );
-  const mdxSource = await serialize(source, { parseFrontmatter: true });
+  const mdxSource = await serialize(source, {
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [],
+      format: "mdx",
+    },
+    parseFrontmatter: true,
+  });
 
   return { props: { source: mdxSource } };
 }
