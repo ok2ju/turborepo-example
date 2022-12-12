@@ -6,6 +6,8 @@ import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import { getAllFrontmatter, getMdxBySlug } from "../../lib/mdx";
 import { MDXComponents } from "../../components/MDX";
+import DocLayout from "../../components/DocLayout";
+import { nav, menu } from "../../constants/routes";
 
 const components = { ...MDXComponents };
 
@@ -18,7 +20,9 @@ export default function ComponentsDoc({ source }: { source: any }) {
         <meta name="description" content={source.frontmatter.metaDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MDXRemote {...source} components={components} />
+      <DocLayout nav={nav} menu={menu}>
+        <MDXRemote {...source} components={components} />
+      </DocLayout>
     </Fragment>
   );
 }

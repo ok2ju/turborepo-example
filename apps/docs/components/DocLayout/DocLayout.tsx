@@ -6,10 +6,31 @@ import ActiveLink from "../ActiveLink";
 interface LayoutProps {
   nav: Array<NavItem>;
   menu: Array<MenuSection>;
+  toc?: Array<{}>;
   children: ReactNode;
 }
 
-const Layout = ({ nav, menu, children }: LayoutProps) => {
+const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
+  const renderToc = (items: any, isRoot?: boolean) => {
+    return (
+      items.length > 0 && (
+        <ul className={!isRoot ? "pl-5" : undefined}>
+          {items.map((i: any) => (
+            <li key={i.id}>
+              <a
+                href={`#${i.id}`}
+                className="flex text-sm font-normal py-2 text-gray-60 hover:text-gray-90"
+              >
+                {i.title}
+              </a>
+              {renderToc(i.children)}
+            </li>
+          ))}
+        </ul>
+      )
+    );
+  };
+
   return (
     <div className="relative flex flex-col h-screen">
       <div className="mx-auto max-w-7xl px-5 border-b-[1px] border-gray-30 w-full">
@@ -33,7 +54,7 @@ const Layout = ({ nav, menu, children }: LayoutProps) => {
         </div>
       </div>
       <div className="flex flex-1 overflow-hidden">
-        <div className="w-[250px] overflow-y-auto px-3 py-6">
+        <div className="w-[19.5rem] overflow-y-auto px-3 py-6">
           {menu.map((item) => (
             <div key={item.key} className="flex flex-col mb-5">
               <h4 className="text-base font-medium text-gray-100 px-5 py-3">
@@ -55,6 +76,12 @@ const Layout = ({ nav, menu, children }: LayoutProps) => {
         <div className="flex-1 overflow-y-auto">
           <div className="max-w-3xl px-6 py-10 mx-auto">{children}</div>
         </div>
+        {toc && toc.length > 0 && (
+          <div className="w-[19.5rem] overflow-y-auto p-8">
+            <h5 className="text-gray-90 mb-4">On this page</h5>
+            {renderToc(toc, true)}
+          </div>
+        )}
       </div>
     </div>
   );
