@@ -20,9 +20,28 @@ npm install @te/core-react
 
 Import desired component from library.
 
+1. You can import all components from root of the package:
+
 ```js
 import { Button } from "@te/core-react";
 ```
+
+2. Or you can configure your environment to import specifig components by strict path:
+
+```js
+import { Button } from "@te/core-react/button";
+```
+
+```js
+// tsconfig.json
+{
+  ...
+  "module": "ESNEXT",
+}
+```
+
+Doc: [link](https://github.com/jkrems/proposal-pkg-exports/)
+See this [issue](https://stackoverflow.com/questions/70296652/how-can-i-use-exports-in-package-json-today-for-nested-submodules-and-typescri)
 
 #### Apply styling
 

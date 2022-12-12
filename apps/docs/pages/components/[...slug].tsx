@@ -4,11 +4,10 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
-import { Button } from "@te/core";
 import { getAllFrontmatter, getMdxBySlug } from "../../lib/mdx";
 import { MDXComponents } from "../../components/MDX";
 
-const components = { ...MDXComponents, Button };
+const components = { ...MDXComponents };
 
 // TODO: Fix type definitions
 export default function ComponentsDoc({ source }: { source: any }) {

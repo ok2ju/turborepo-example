@@ -1,6 +1,6 @@
 import { SyntheticEvent } from "react";
 
-export enum SIZE {
+export enum BUTTON_SIZE {
   small = "small",
   default = "default",
   medium = "medium",
@@ -8,36 +8,36 @@ export enum SIZE {
 }
 
 const sizes = {
-  [SIZE.small]: "text-xs px-5 py-2",
-  [SIZE.default]: "text-sm px-5 py-2",
-  [SIZE.medium]: "text-base px-5 py-3",
-  [SIZE.big]: "text-base px-5 py-3",
+  [BUTTON_SIZE.small]: "text-xs px-5 py-2",
+  [BUTTON_SIZE.default]: "text-sm px-5 py-2",
+  [BUTTON_SIZE.medium]: "text-base px-5 py-3",
+  [BUTTON_SIZE.big]: "text-base px-5 py-3",
 };
 
-export enum TYPE {
+export enum BUTTON_TYPE {
   primary = "primary",
   secondary = "secondary",
   danger = "danger",
 }
 
 const types = {
-  [TYPE.primary]: "bg-blue-60 hover:bg-blue-70 text-white",
-  [TYPE.secondary]: "bg-blue-60 hover:bg-blue-70 text-white",
-  [TYPE.danger]: "bg-red-50 hover:bg-red-60 text-white",
+  [BUTTON_TYPE.primary]: "bg-blue-60 hover:bg-blue-70 text-white",
+  [BUTTON_TYPE.secondary]: "bg-blue-60 hover:bg-blue-70 text-white",
+  [BUTTON_TYPE.danger]: "bg-red-50 hover:bg-red-60 text-white",
 };
 
 interface ButtonProps {
   title: string;
-  size?: SIZE;
-  type?: TYPE;
+  size?: BUTTON_SIZE;
+  type?: BUTTON_TYPE;
   disabled?: boolean;
   onClick?: (event: SyntheticEvent) => void;
 }
 
 export const Button = ({
   title,
-  size = SIZE.default,
-  type = TYPE.primary,
+  size = BUTTON_SIZE.default,
+  type = BUTTON_TYPE.primary,
   disabled,
   onClick,
 }: ButtonProps) => {
