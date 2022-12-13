@@ -24,6 +24,9 @@ export interface ColorTokensTableProps {
   data: Array<{ [key: string]: string }>;
 }
 
+const bodyCellClasses =
+  "border-b border-gray-30 p-4 text-body2-short text-gray-60";
+
 const ColorTokensTable = ({ data }: ColorTokensTableProps) => {
   const getPreviewColorValue = (token: string) => {
     const [color, tint] = token.split("-");
@@ -37,7 +40,7 @@ const ColorTokensTable = ({ data }: ColorTokensTableProps) => {
           {header.map((hcell, idx) => (
             <th
               key={idx}
-              className="border-b border-gray-30 font-medium p-4 pb-3 text-gray-80 text-left"
+              className="border-b border-gray-30 text-heading-1-short p-4 pb-3 text-gray-80 text-left"
             >
               {hcell.title}
             </th>
@@ -47,19 +50,15 @@ const ColorTokensTable = ({ data }: ColorTokensTableProps) => {
       <tbody>
         {data.map((row, rowIdx) => (
           <tr key={rowIdx}>
-            <td className="w-[220px] border-b border-gray-30 p-4 text-gray-60">
-              <span className="text-sm px-3 py-2 bg-gray-30 rounded">
-                {row.token}
-              </span>
+            <td className={`w-[220px] ${bodyCellClasses}`}>
+              <span className="px-3 py-2 bg-gray-30 rounded">{row.token}</span>
             </td>
-            <td className="w-[320px] border-b border-gray-30 p-4 text-gray-60">
-              {row.usage}
-            </td>
-            <td className="border-b border-gray-30 p-4 text-gray-60">
+            <td className={`w-[320px] ${bodyCellClasses}`}>{row.usage}</td>
+            <td className={bodyCellClasses}>
               <p>{row.value}</p>
               <p>{getPreviewColorValue(row.value)}</p>
             </td>
-            <td className="border-b border-gray-30 p-4 text-gray-60">
+            <td className={bodyCellClasses}>
               <div
                 className="w-[50px] h-[50px] rounded-full"
                 style={{ backgroundColor: getPreviewColorValue(row.value) }}

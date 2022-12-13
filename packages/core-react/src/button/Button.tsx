@@ -7,9 +7,9 @@ export enum BUTTON_SIZE {
 }
 
 const sizes = {
-  [BUTTON_SIZE.small]: "text-xs px-4 py-3",
-  [BUTTON_SIZE.default]: "text-sm px-5 py-4",
-  [BUTTON_SIZE.big]: "text-sm px-6 py-4",
+  [BUTTON_SIZE.small]: "text-label-1 px-4 py-3",
+  [BUTTON_SIZE.default]: "text-label-1 px-5 py-4",
+  [BUTTON_SIZE.big]: "text-label-1 px-6 py-4",
 };
 
 export enum BUTTON_TYPE {

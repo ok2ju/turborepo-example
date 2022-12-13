@@ -22,7 +22,10 @@ const Playground = ({ code, children }: PlaygroundProps) => {
         </div>
         {code && (
           <div className="relative flex justify-end px-4 py-4 z-10">
-            <button onClick={handleOpenCode} className="text-black text-xs">
+            <button
+              onClick={handleOpenCode}
+              className="text-black text-label-1"
+            >
               {open ? "Hide" : "Show"} code
             </button>
           </div>

@@ -1,10 +1,19 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import cx from "classnames";
 
 interface TocProps {
   toc: Array<{}>;
 }
+
+const listDepth: { [key: number]: string } = {
+  1: "pl-3",
+  2: "pl-5",
+  3: "pl-6",
+  4: "pl-7",
+  5: "pl-8",
+};
 
 const Toc = ({ toc }: TocProps) => {
   const [activeAnchor, setActiveAnchor] = useState("");
@@ -26,21 +35,28 @@ const Toc = ({ toc }: TocProps) => {
     };
   }, [router.events]);
 
-  const renderToc = (items: any, isRoot?: boolean) => {
+  const renderToc = (items: any, depth: number, isRoot?: boolean) => {
+    const d = depth + 1;
     return (
       items.length > 0 && (
-        <ul className={!isRoot ? "pl-5" : undefined}>
+        <ul
+          className={cx({
+            "border-l border-gray-30": isRoot,
+          })}
+        >
           {items.map((i: any) => (
             <li key={i.id}>
               <Link
                 href={`#${i.id}`}
-                className={`flex text-sm font-normal py-2 text-gray-60 hover:text-gray-90 ${
-                  activeAnchor === i.id ? "text-blue-50" : "text-gray-60"
-                }`}
+                className={cx("flex relative text-label-1 p-3", listDepth[d], {
+                  "text-gray-60 hover:text-gray-90": activeAnchor !== i.id,
+                  "text-black bg-blue-20 before:content-[''] before:w-[1px] before:h-full before:absolute before:-left-[1px] before:bg-black before:top-0":
+                    activeAnchor === i.id,
+                })}
               >
                 {i.title}
               </Link>
-              {renderToc(i.children)}
+              {renderToc(i.children, depth++)}
             </li>
           ))}
         </ul>
@@ -49,9 +65,9 @@ const Toc = ({ toc }: TocProps) => {
   };
 
   return (
-    <div className="w-[19.5rem] overflow-y-auto p-8">
-      <h5 className="text-gray-90 mb-4">On this page</h5>
-      {renderToc(toc, true)}
+    <div className="w-[16.5rem] overflow-y-auto px-6 py-9">
+      <h5 className="text-heading-1 text-gray-90 mb-4">On this page</h5>
+      {renderToc(toc, 1, true)}
     </div>
   );
 };

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@te/core": "*",
+    "classnames": "^2.3.2",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
     "hast-util-has-property": "^2.0.0",
