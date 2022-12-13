@@ -35,7 +35,7 @@ const Header = forwardRef<
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
-      className="h-[45px] text-left bg-white text-gray-70 flex flex-1 px-5 items-center justify-between text-sm shadow-[0_1px_0_#e4e2e4] hover:bg-gray-20"
+      className="h-[45px] text-left bg-white text-gray-70 flex flex-1 px-5 items-center justify-between text-label-2 shadow-[0_1px_0_#e4e2e4] hover:bg-gray-20"
       {...props}
     >
       {children}
@@ -49,7 +49,7 @@ const Content = ({
   ...props
 }: AccordionPrimitive.AccordionContentProps) => (
   <AccordionPrimitive.Content
-    className="overflow-hidden bg-white text-sm font-light text-gray-50"
+    className="overflow-hidden bg-white text-body1 text-gray-50"
     {...props}
   >
     <div className="px-5 py-4">{children}</div>

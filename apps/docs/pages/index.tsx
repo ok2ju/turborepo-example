@@ -19,7 +19,7 @@ export default function Docs() {
       </Head>
       <div className="h-screen flex items-center justify-center bg-gradient-to-r from-blue-20">
         <div className="flex flex-col items-center max-w-5xl">
-          <h1 className="text-8xl font-medium mb-3">IDS</h1>
+          <h1 className="text-heading-7 font-medium mb-3">IDS</h1>
           <p className="text-base text-center text-gray-60 mb-5">
             IDS is X open source design system for products and digital
             experiences. With the X Design Language as its foundation, the
