@@ -1,14 +1,16 @@
 {
   "name": "@te/core",
   "version": "0.0.1",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist/"
+    "dist/**"
   ],
   "exports": {
-    ".": "./dist",
-    "./": "./dist/",
+    ".": "./dist/index.js",
+    "./button": "./dist/button/index.js",
+    "./accordion": "./dist/accordion/index.js",
     "./styles.css": "./dist/styles.css"
   },
   "license": "MIT",

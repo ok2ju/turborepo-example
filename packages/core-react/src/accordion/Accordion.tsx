@@ -6,10 +6,10 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 const Root = forwardRef<
   ElementRef<typeof AccordionPrimitive.Root>,
   ComponentProps<typeof AccordionPrimitive.Root>
->(({ children, ...props }, ref) => (
+>(({ children, className, ...props }, ref) => (
   <AccordionPrimitive.Root
     ref={ref}
-    className="rounded-[6px] shadow bg-gray-10"
+    className={`rounded-[6px] shadow bg-gray-10 border-gray-20 ${className}`}
     {...props}
   >
     {children}

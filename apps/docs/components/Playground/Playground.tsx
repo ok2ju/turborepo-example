@@ -15,11 +15,14 @@ const Playground = ({ code, children }: PlaygroundProps) => {
 
   return (
     <div className="mb-8">
-      <div className="w-full mb-4 bg-gradient-to-r from-cyan-50 to-blue-50">
-        <div className="flex items-center justify-center p-10">{children}</div>
+      <div className="w-full mb-4 relative">
+        <div className="absolute inset-0 bg-[url('/grid-cell.svg')] [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] border border-gray-30 rounded-lg" />
+        <div className="relative flex items-center justify-center p-10 z-10">
+          {children}
+        </div>
         {code && (
-          <div className="flex justify-end px-4 py-4">
-            <button onClick={handleOpenCode} className="text-white text-xs">
+          <div className="relative flex justify-end px-4 py-4 z-10">
+            <button onClick={handleOpenCode} className="text-black text-xs">
               {open ? "Hide" : "Show"} code
             </button>
           </div>

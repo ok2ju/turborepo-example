@@ -88,12 +88,12 @@ export const menu = [
       },
       {
         key: "component_table",
-        title: "Table",
+        title: "Table - TDB",
         slug: "/components/table",
       },
       {
         key: "component_popover",
-        title: "Popover",
+        title: "Popover - TDB",
         slug: "/components/popover",
       },
     ],

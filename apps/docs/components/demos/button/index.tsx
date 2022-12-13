@@ -16,10 +16,10 @@ const ButtonExample = () => (
       <Button title="Button" size={BUTTON_SIZE.default} />
     </div>
     <div className="mx-1">
-      <Button title="Button" size={BUTTON_SIZE.medium} />
+      <Button title="Button" type={BUTTON_TYPE.danger} size={BUTTON_SIZE.big} />
     </div>
     <div className="mx-1">
-      <Button title="Button" type={BUTTON_TYPE.danger} size={BUTTON_SIZE.big} />
+      <Button title="Button" size={BUTTON_SIZE.small} />
     </div>
   </div>
 );
