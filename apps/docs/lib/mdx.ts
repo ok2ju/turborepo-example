@@ -69,6 +69,11 @@ export const extractHeadings = ({ headings }: { headings: any }) => {
       }
     });
 
-    headings.push(...toc);
+    // Skip `h1` (display only headings starting from `h2`)
+    const withoutH1 = toc.reduce((acc: any, curr: any) => {
+      return [...acc, ...curr.children];
+    }, []);
+
+    headings.push(...withoutH1);
   };
 };

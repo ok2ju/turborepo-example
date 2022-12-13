@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import { NavItem, MenuSection } from "../../constants/routes";
 import ActiveLink from "../ActiveLink";
+import Toc from "./Toc";
 
 interface LayoutProps {
   nav: Array<NavItem>;
@@ -11,29 +12,9 @@ interface LayoutProps {
 }
 
 const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
-  const renderToc = (items: any, isRoot?: boolean) => {
-    return (
-      items.length > 0 && (
-        <ul className={!isRoot ? "pl-5" : undefined}>
-          {items.map((i: any) => (
-            <li key={i.id}>
-              <a
-                href={`#${i.id}`}
-                className="flex text-sm font-normal py-2 text-gray-60 hover:text-gray-90"
-              >
-                {i.title}
-              </a>
-              {renderToc(i.children)}
-            </li>
-          ))}
-        </ul>
-      )
-    );
-  };
-
   return (
     <div className="relative flex flex-col h-screen">
-      <div className="mx-auto max-w-7xl px-5 border-b-[1px] border-gray-30 w-full">
+      <div className="mx-auto max-w-7xl px-5 border-b border-gray-30 w-full">
         <div className="flex justify-between items-center py-5">
           <Link href="/" className="flex items-center justify-start">
             <span className="sr-only">Your Company</span>
@@ -76,12 +57,7 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
         <div className="flex-1 overflow-y-auto">
           <div className="max-w-3xl px-6 py-10 mx-auto">{children}</div>
         </div>
-        {toc && toc.length > 0 && (
-          <div className="w-[19.5rem] overflow-y-auto p-8">
-            <h5 className="text-gray-90 mb-4">On this page</h5>
-            {renderToc(toc, true)}
-          </div>
-        )}
+        {toc && toc.length > 0 && <Toc toc={toc} />}
       </div>
     </div>
   );

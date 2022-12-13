@@ -17,10 +17,10 @@ export default function Docs() {
         <meta name="description" content="IDS main page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="h-screen flex items-center justify-center bg-gray-10">
+      <div className="h-screen flex items-center justify-center bg-gradient-to-r from-blue-20">
         <div className="flex flex-col items-center max-w-5xl">
           <h1 className="text-8xl font-medium mb-3">IDS</h1>
-          <p className="text-base text-center mb-5">
+          <p className="text-base text-center text-gray-60 mb-5">
             IDS is X open source design system for products and digital
             experiences. With the X Design Language as its foundation, the
             system consists of ready-to-use react ui components library, design
@@ -28,7 +28,7 @@ export default function Docs() {
           </p>
           <Button
             title="Get started"
-            size={BUTTON_SIZE.medium}
+            size={BUTTON_SIZE.default}
             type={BUTTON_TYPE.primary}
             onClick={redirectToDocs}
           />
