@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import cx from "classnames";
+import { ScrollArea } from "../ScrollArea";
 
 interface TocProps {
   toc: Array<{}>;
@@ -65,9 +66,13 @@ const Toc = ({ toc }: TocProps) => {
   };
 
   return (
-    <div className="w-[16.5rem] overflow-y-auto px-6 py-9">
-      <h5 className="text-heading-1 text-gray-90 mb-4">On this page</h5>
-      {renderToc(toc, 1, true)}
+    <div className="w-[16.5rem]">
+      <ScrollArea>
+        <div className="px-6 py-9">
+          <h5 className="text-heading-1 text-gray-90 mb-4">On this page</h5>
+          {renderToc(toc, 1, true)}
+        </div>
+      </ScrollArea>
     </div>
   );
 };
