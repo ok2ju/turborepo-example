@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import { NavItem, MenuSection } from "../../constants/routes";
 import ActiveLink from "../ActiveLink";
+import { ScrollArea } from "../ScrollArea";
 import Toc from "./Toc";
 
 interface LayoutProps {
@@ -35,27 +36,33 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
         </div>
       </div>
       <div className="flex flex-1 overflow-hidden">
-        <div className="w-[15rem] overflow-y-auto p-6 border-r border-gray-30">
-          {menu.map((item) => (
-            <div key={item.key} className="flex flex-col mb-5">
-              <h4 className="text-heading-1 text-gray-90 py-3">
-                {item.section}
-              </h4>
-              {item.pages.map((page) => (
-                <ActiveLink
-                  key={page.key}
-                  href={page.slug}
-                  activeClassName="active"
-                  className="text-body1-short px-5 py-3 text-gray-60 hover:bg-blue-10 rounded-md [&.active]:bg-blue-20"
-                >
-                  {page.title}
-                </ActiveLink>
+        <div className="w-[15rem] border-r border-gray-30">
+          <ScrollArea>
+            <div className="p-6">
+              {menu.map((item) => (
+                <div key={item.key} className="flex flex-col mb-5">
+                  <h4 className="text-heading-1 text-gray-90 py-3">
+                    {item.section}
+                  </h4>
+                  {item.pages.map((page) => (
+                    <ActiveLink
+                      key={page.key}
+                      href={page.slug}
+                      activeClassName="active"
+                      className="text-body1-short px-5 py-3 text-gray-60 hover:bg-blue-10 rounded-md [&.active]:bg-blue-20"
+                    >
+                      {page.title}
+                    </ActiveLink>
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
+          </ScrollArea>
         </div>
-        <div className="flex-1 overflow-y-auto">
-          <div className="max-w-3xl px-11 py-9 mx-auto">{children}</div>
+        <div className="flex-1">
+          <ScrollArea>
+            <div className="max-w-3xl px-11 py-9 mx-auto">{children}</div>
+          </ScrollArea>
         </div>
         {toc && toc.length > 0 && <Toc toc={toc} />}
       </div>

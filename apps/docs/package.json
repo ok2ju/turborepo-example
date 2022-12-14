@@ -10,6 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.0.2",
     "@te/core": "*",
     "classnames": "^2.3.2",
     "glob": "^8.0.3",
