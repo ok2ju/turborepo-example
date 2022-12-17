@@ -13,8 +13,8 @@ export default function Docs() {
   return (
     <Fragment>
       <Head>
-        <title>IDS</title>
-        <meta name="description" content="IDS main page" />
+        <title>Welcome to IDS</title>
+        <meta name="description" content="IDS: Main page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-screen flex items-center justify-center bg-gradient-to-r from-blue-20">

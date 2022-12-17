@@ -25,7 +25,7 @@ export interface ColorTokensTableProps {
 }
 
 const bodyCellClasses =
-  "border-b border-gray-30 p-4 text-body2-short text-gray-60";
+  "border-b border-border px-5 py-[10px] text-body1 text-primary group-last:border-0";
 
 const ColorTokensTable = ({ data }: ColorTokensTableProps) => {
   const getPreviewColorValue = (token: string) => {
@@ -34,13 +34,13 @@ const ColorTokensTable = ({ data }: ColorTokensTableProps) => {
   };
 
   return (
-    <table className="border-collapse table-auto w-full mt-5 mb-5">
+    <table className="border-collapse table-auto w-full mt-6 mb-6">
       <thead>
         <tr>
           {header.map((hcell, idx) => (
             <th
               key={idx}
-              className="border-b border-gray-30 text-heading-1-short p-4 pb-3 text-gray-80 text-left"
+              className="border-b border-border text-heading-1-short px-5 py-4 text-primary text-left"
             >
               {hcell.title}
             </th>
@@ -49,18 +49,19 @@ const ColorTokensTable = ({ data }: ColorTokensTableProps) => {
       </thead>
       <tbody>
         {data.map((row, rowIdx) => (
-          <tr key={rowIdx}>
+          <tr key={rowIdx} className="group">
             <td className={`w-[220px] ${bodyCellClasses}`}>
-              <span className="px-3 py-2 bg-gray-30 rounded">{row.token}</span>
+              <span className="px-3 py-2 bg-steelGray-10 rounded-[3px] whitespace-nowrap">
+                {row.token}
+              </span>
             </td>
             <td className={`w-[320px] ${bodyCellClasses}`}>{row.usage}</td>
             <td className={bodyCellClasses}>
-              <p>{row.value}</p>
-              <p>{getPreviewColorValue(row.value)}</p>
+              <p className="whitespace-nowrap">{row.value}</p>
             </td>
-            <td className={bodyCellClasses}>
+            <td className={`w-[100px] ${bodyCellClasses}`}>
               <div
-                className="w-[50px] h-[50px] rounded-full"
+                className="w-7 h-7 rounded-full border border-border"
                 style={{ backgroundColor: getPreviewColorValue(row.value) }}
               />
             </td>

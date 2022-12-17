@@ -2,7 +2,7 @@ import React from "react";
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
 const thumbClasses =
-  "flex-1 bg-gray-30 rounded-[8px] z-[1] relative before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:w-full before:h-full before:min-w-[44px] before:min-h-[44px] before:-translate-x-1/2 before:-translate-y-1/2";
+  "flex-1 bg-steelGray-30 rounded-[8px] z-[1] relative before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:w-full before:h-full before:min-w-[44px] before:min-h-[44px] before:-translate-x-1/2 before:-translate-y-1/2";
 
 type ScrollAreaProps = React.ComponentPropsWithoutRef<
   typeof ScrollAreaPrimitive.Viewport
