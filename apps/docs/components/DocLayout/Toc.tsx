@@ -36,22 +36,18 @@ const Toc = ({ toc }: TocProps) => {
     };
   }, [router.events]);
 
-  const renderToc = (items: any, depth: number, isRoot?: boolean) => {
+  const renderToc = (items: any, depth: number) => {
     const d = depth + 1;
     return (
       items.length > 0 && (
-        <ul
-          className={cx({
-            "border-l border-gray-30": isRoot,
-          })}
-        >
+        <ul>
           {items.map((i: any) => (
             <li key={i.id}>
               <Link
                 href={`#${i.id}`}
                 className={cx("flex relative text-label-1 p-3", listDepth[d], {
-                  "text-gray-60 hover:text-gray-90": activeAnchor !== i.id,
-                  "text-black bg-blue-20 before:content-[''] before:w-[1px] before:h-full before:absolute before:-left-[1px] before:bg-black before:top-0":
+                  "text-secondary hover:text-gray-90": activeAnchor !== i.id,
+                  "text-primary bg-background-selected rounded-sm":
                     activeAnchor === i.id,
                 })}
               >
@@ -69,8 +65,8 @@ const Toc = ({ toc }: TocProps) => {
     <div className="w-[16.5rem]">
       <ScrollArea>
         <div className="px-6 py-9">
-          <h5 className="text-heading-1 text-gray-90 mb-4">On this page</h5>
-          {renderToc(toc, 1, true)}
+          <h5 className="text-heading-1 text-primary mb-3">On this page</h5>
+          {renderToc(toc, 1)}
         </div>
       </ScrollArea>
     </div>

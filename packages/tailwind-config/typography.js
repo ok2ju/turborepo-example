@@ -33,63 +33,63 @@ const typography = {
     "0.875rem",
     {
       lineHeight: "1.25rem",
-      fontWeight: "700",
+      fontWeight: "600",
     },
   ],
   "heading-1-short": [
     "0.875rem",
     {
       lineHeight: "1.125rem",
-      fontWeight: "700",
+      fontWeight: "600",
     },
   ],
   "heading-2": [
     "1rem",
     {
       lineHeight: "1.5rem",
-      fontWeight: "700",
+      fontWeight: "600",
     },
   ],
   "heading-2-short": [
     "1rem",
     {
       lineHeight: "1.25rem",
-      fontWeight: "700",
+      fontWeight: "600",
     },
   ],
   "heading-3": [
     "1.25rem",
     {
       lineHeight: "1.75rem",
-      fontWeight: "700",
+      fontWeight: "600",
     },
   ],
   "heading-4": [
     "1.5rem",
     {
       lineHeight: "1.875rem",
-      fontWeight: "700",
+      fontWeight: "600",
     },
   ],
   "heading-5": [
     "1.875rem",
     {
       lineHeight: "2.25rem",
-      fontWeight: "700",
+      fontWeight: "600",
     },
   ],
   "heading-6": [
     "2.25rem",
     {
       lineHeight: "2.75rem",
-      fontWeight: "700",
+      fontWeight: "600",
     },
   ],
   "heading-7": [
     "3rem",
     {
       lineHeight: "3.5rem",
-      fontWeight: "700",
+      fontWeight: "600",
     },
   ],
   // Utility

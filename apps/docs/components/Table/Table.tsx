@@ -16,7 +16,7 @@ const Table = ({ header, data }: TableProps) => {
           {header.map((hcell, idx) => (
             <th
               key={idx}
-              className="text-heading-1-short border-b border-gray-30 p-4 pb-3 text-gray-80 text-left"
+              className="text-heading-1-short border-b border-border px-5 py-4 text-primary text-left"
             >
               {hcell.title}
             </th>
@@ -25,11 +25,11 @@ const Table = ({ header, data }: TableProps) => {
       </thead>
       <tbody>
         {data.map((row, rowIdx) => (
-          <tr key={rowIdx}>
+          <tr key={rowIdx} className="group">
             {Object.keys(row).map((key, cellIdx) => (
               <td
                 key={cellIdx}
-                className="border-b border-gray-30 p-4 text-body2-short text-gray-60"
+                className="border-b border-border px-5 py-[14px] text-body1 text-primary group-last:border-0"
               >
                 {row[key]}
               </td>

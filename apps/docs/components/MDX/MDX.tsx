@@ -15,48 +15,48 @@ interface HeadingProps {
 export const MDXComponents = {
   h1: ({ id, children }: PropsWithChildren<HeadingProps>) => (
     <Link href={`#${id}`}>
-      <h1 id={id} className="text-heading-6 text-gray-90 mb-4">
+      <h1 id={id} className="text-heading-6 text-primary mb-6">
         {children}
       </h1>
     </Link>
   ),
   h2: ({ id, children }: PropsWithChildren<HeadingProps>) => (
     <Link href={`#${id}`}>
-      <h2 id={id} className="text-heading-5 text-gray-90 mt-9 mb-4">
+      <h2 id={id} className="text-heading-5 text-primary mt-9 mb-4">
         {children}
       </h2>
     </Link>
   ),
   h3: ({ id, children }: PropsWithChildren<HeadingProps>) => (
     <Link href={`#${id}`}>
-      <h3 id={id} className="text-heading-4 text-gray-90 mt-9 mb-4">
+      <h3 id={id} className="text-heading-4 text-primary mt-9 mb-6">
         {children}
       </h3>
     </Link>
   ),
   h4: ({ id, children }: PropsWithChildren<HeadingProps>) => (
     <Link href={`#${id}`}>
-      <h4 id={id} className="text-heading-3 text-gray-90 mt-9 mb-4">
+      <h4 id={id} className="text-heading-3 text-primary mt-9 mb-5">
         {children}
       </h4>
     </Link>
   ),
   h5: ({ id, children }: PropsWithChildren<HeadingProps>) => (
     <Link href={`#${id}`}>
-      <h5 id={id} className="text-heading-2 text-gray-90 mt-9 mb-4">
+      <h5 id={id} className="text-heading-2 text-primary mt-9 mb-5">
         {children}
       </h5>
     </Link>
   ),
   h6: ({ id, children }: PropsWithChildren<HeadingProps>) => (
     <Link href={`#${id}`}>
-      <h6 id={id} className="text-heading-1 text-gray-90 mt-9 mb-4">
+      <h6 id={id} className="text-heading-1 text-primary mt-9 mb-4">
         {children}
       </h6>
     </Link>
   ),
   p: ({ children }: PropsWithChildren) => (
-    <p className="text-body-2 text-gray-80 mb-4">{children}</p>
+    <p className="text-body-2 text-primary mb-4">{children}</p>
   ),
   code: (props: PropsWithChildren<{ className: string }>) => {
     const { className, children } = props;
