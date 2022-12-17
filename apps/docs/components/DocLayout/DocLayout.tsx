@@ -6,6 +6,7 @@ import { MenuSection } from "../../constants/routes";
 import ActiveLink from "../ActiveLink";
 import { ScrollArea } from "../ScrollArea";
 import Toc from "./Toc";
+import Logo from "../Icons/Logo";
 
 interface LayoutProps {
   menu: Array<MenuSection>;
