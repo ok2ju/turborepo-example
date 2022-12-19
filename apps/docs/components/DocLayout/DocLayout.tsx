@@ -71,7 +71,9 @@ const Layout = ({ menu, toc, children }: LayoutProps) => {
           </div>
           <div className="relative px-6 mt-10 bg-background z-10">
             <div className="border-t border-base flex justify-between py-6">
-              <div>Logo here</div>
+              <div>
+                <Logo />
+              </div>
               <div className="flex items-center">
                 <div className="flex items-center">
                   <span className="text-label-1 text-secondary px-3">
