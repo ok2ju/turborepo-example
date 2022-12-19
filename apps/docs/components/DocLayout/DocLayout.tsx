@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
+import { Fragment, ReactNode } from "react";
 import Link from "next/link";
+import cx from "classnames";
 import { NavItem, MenuSection } from "../../constants/routes";
 import ActiveLink from "../ActiveLink";
 import { ScrollArea } from "../ScrollArea";
@@ -14,8 +15,8 @@ interface LayoutProps {
 
 const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
   return (
-    <div className="relative flex flex-col h-screen">
-      <div className="mx-auto max-w-7xl px-6 border-b border-border w-full">
+    <Fragment>
+      <div className="fixed top-0 left-0 right-0 px-6 border-b border-border w-full bg-background z-10">
         <div className="flex justify-between items-center py-6">
           <Link href="/" className="flex items-center justify-start">
             <span className="sr-only">Your Company</span>
@@ -35,8 +36,8 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
           </nav>
         </div>
       </div>
-      <div className="flex flex-1 overflow-hidden">
-        <div className="w-[15rem]">
+      <div className="pt-[73px]">
+        <div className="fixed left-0 top-[73px] bottom-0 w-[15rem]">
           <ScrollArea>
             <div className="p-6">
               {menu.map((item) => (
@@ -59,32 +60,38 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
             </div>
           </ScrollArea>
         </div>
-        <div className="flex-1">
-          <ScrollArea>
-            <div className="max-w-3xl px-11 pt-9 mx-auto">
-              {children}
-              <div className="py-6 mt-10 border-t border-border flex justify-between">
-                <div>Logo here</div>
+        <div className="pl-[15rem]">
+          <div
+            className={cx("relative", {
+              "xl:mr-[16.5rem]": toc && toc.length,
+            })}
+          >
+            <div className="max-w-[58.75rem] mx-auto">
+              <div className="px-11 pt-9">{children}</div>
+            </div>
+          </div>
+          <div className="relative px-6 mt-10 bg-background z-10">
+            <div className="border-t border-border flex justify-between py-6">
+              <div>Logo here</div>
+              <div className="flex items-center">
                 <div className="flex items-center">
-                  <div className="flex items-center">
-                    <span className="text-label-1 text-secondary px-3">
-                      GitHub
-                    </span>
-                    <span className="text-label-1 text-secondary px-3">
-                      Contact us
-                    </span>
-                  </div>
-                  <span className="text-label-1 text-secondary pl-3">
-                    Copyright © 2022 - All Rights reserved
+                  <span className="text-label-1 text-secondary px-3">
+                    GitHub
+                  </span>
+                  <span className="text-label-1 text-secondary px-3">
+                    Contact us
                   </span>
                 </div>
+                <span className="text-label-1 text-secondary pl-3">
+                  Copyright © 2022 - All Rights reserved
+                </span>
               </div>
             </div>
-          </ScrollArea>
+          </div>
         </div>
         {toc && toc.length > 0 && <Toc toc={toc} />}
       </div>
-    </div>
+    </Fragment>
   );
 };
 

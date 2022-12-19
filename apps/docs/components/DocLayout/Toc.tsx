@@ -62,7 +62,7 @@ const Toc = ({ toc }: TocProps) => {
   };
 
   return (
-    <div className="w-[16.5rem]">
+    <div className="w-[16.5rem] fixed top-[73px] right-0 bottom-0 hidden xl:block">
       <ScrollArea>
         <div className="px-6 py-9">
           <h5 className="text-heading-1 text-primary mb-3">On this page</h5>
