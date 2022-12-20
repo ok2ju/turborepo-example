@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from "react";
+import { ReactNode } from "react";
 import Link from "next/link";
 import cx from "classnames";
 import { NavItem, MenuSection } from "../../constants/routes";
@@ -15,7 +15,7 @@ interface LayoutProps {
 
 const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
   return (
-    <Fragment>
+    <div className="h-screen">
       <div className="fixed top-0 left-0 right-0 px-6 border-b border-border w-full bg-background z-10">
         <div className="flex justify-between items-center py-6">
           <Link href="/" className="flex items-center justify-start">
@@ -36,7 +36,7 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
           </nav>
         </div>
       </div>
-      <div className="pt-[73px]">
+      <div className="pt-[73px] h-full">
         <div className="fixed left-0 top-[73px] bottom-0 w-[15rem]">
           <ScrollArea>
             <div className="p-6">
@@ -60,9 +60,9 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
             </div>
           </ScrollArea>
         </div>
-        <div className="pl-[15rem]">
+        <div className="flex flex-col h-full pl-[15rem]">
           <div
-            className={cx("relative", {
+            className={cx("relative flex-1", {
               "xl:mr-[16.5rem]": toc && toc.length,
             })}
           >
@@ -91,7 +91,7 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
         </div>
         {toc && toc.length > 0 && <Toc toc={toc} />}
       </div>
-    </Fragment>
+    </div>
   );
 };
 
