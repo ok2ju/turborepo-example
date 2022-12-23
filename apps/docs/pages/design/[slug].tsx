@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import remarkGfm from "remark-gfm";
@@ -65,6 +66,7 @@ export async function getStaticProps(context: any) {
     },
     parseFrontmatter: true,
   });
+  const i18 = await serverSideTranslations(context.locale ?? "en", ["common"]);
 
-  return { props: { source: mdxSource, headings } };
+  return { props: { source: mdxSource, headings, ...i18 } };
 }

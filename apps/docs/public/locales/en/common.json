@@ -1,0 +1,35 @@
+{
+  "change-locale": "Change locale to \"{{changeTo}}\"",
+  "headerNav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact Us"
+  },
+  "menu": {
+    "overview": {
+      "sectionTitle": "Overview",
+      "introduction": "Introduction",
+      "gettingStarted": "Getting Started"
+    },
+    "design": {
+      "sectionTitle": "Design",
+      "colors": "Colors",
+      "typography": "Typography",
+      "spacing": "Spacing"
+    },
+    "components": {
+      "sectionTitle": "Components",
+      "accordion": "Accordion",
+      "button": "Button",
+      "table": "Table - TBD",
+      "popover": "Popover - TBD"
+    }
+  },
+  "footer": {
+    "links": {
+      "github": "Github",
+      "contact": "Contact Us"
+    },
+    "copyright": "Copyright © 2022 - All Rights reserved"
+  }
+}

@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Button, BUTTON_SIZE, BUTTON_TYPE } from "@te/core";
 
 export default function Docs() {
@@ -37,3 +38,8 @@ export default function Docs() {
     </Fragment>
   );
 }
+
+export const getStaticProps = async (context: any) => {
+  const i18 = await serverSideTranslations(context.locale ?? "en", ["common"]);
+  return { props: { ...i18 } };
+};

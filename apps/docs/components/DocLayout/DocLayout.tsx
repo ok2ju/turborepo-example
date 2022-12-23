@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import cx from "classnames";
 import { NavItem, MenuSection } from "../../constants/routes";
 import ActiveLink from "../ActiveLink";
@@ -14,6 +15,8 @@ interface LayoutProps {
 }
 
 const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
+  const { t } = useTranslation("common");
+
   return (
     <div className="h-screen">
       <div className="fixed top-0 left-0 right-0 px-6 border-b border-border w-full bg-background z-10">
@@ -30,7 +33,7 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
                 activeClassName="active"
                 className="text-heading-1 text-secondary hover:text-gray-90 [&.active]:text-primary"
               >
-                {item.title}
+                {t(`headerNav.${item.key}`)}
               </ActiveLink>
             ))}
           </nav>
@@ -43,7 +46,7 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
               {menu.map((item) => (
                 <div key={item.key} className="flex flex-col mb-5">
                   <h4 className="text-heading-1 text-primary py-3">
-                    {item.section}
+                    {t(`menu.${item.key}.sectionTitle`)}
                   </h4>
                   {item.pages.map((page) => (
                     <ActiveLink
@@ -52,7 +55,7 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
                       activeClassName="active"
                       className="text-body1-short px-5 py-3 text-secondary hover:bg-background-hover rounded-sm [&.active]:bg-background-selected"
                     >
-                      {page.title}
+                      {t(`menu.${item.key}.${page.key}`)}
                     </ActiveLink>
                   ))}
                 </div>
@@ -76,14 +79,14 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
               <div className="flex items-center">
                 <div className="flex items-center">
                   <span className="text-label-1 text-secondary px-3">
-                    GitHub
+                    {t("footer.links.github")}
                   </span>
                   <span className="text-label-1 text-secondary px-3">
-                    Contact us
+                    {t("footer.links.contact")}
                   </span>
                 </div>
                 <span className="text-label-1 text-secondary pl-3">
-                  Copyright © 2022 - All Rights reserved
+                  {t("footer.copyright")}
                 </span>
               </div>
             </div>
