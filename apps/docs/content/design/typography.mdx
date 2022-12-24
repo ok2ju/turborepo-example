@@ -6,7 +6,514 @@ name: typography
 
 # Typography
 
-<Description>
-  An open-source UI component library for building high-quality, accessible
-  design systems and web apps.
-</Description>
+Typography is used to create clear hierarchies, useful organizations, and purposeful alignments that guide users through the product and experience. It is the core structure of any well designed interface.
+We use sans serif native system font families so that products load quickly and can be read efficiently across all devices. We uses a clear naming approach and type tokens to manage typography across complex and layered layouts and patterns.
+
+### Scale
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<Table
+  header={[
+    {
+      key: "token",
+      title: "Token",
+      className: "w-[40%]",
+    },
+    {
+      key: "size",
+      title: "Size px/rem",
+      className: "w-[40%]",
+    },
+    {
+      key: "example",
+      title: "Example",
+      className: "w-[20%]",
+    },
+  ]}
+  data={[
+    {
+      token: <Code>text-xs</Code>,
+      size: "12/0.75",
+      example: <p className="text-xs">Aa</p>,
+    },
+    {
+      token: <Code>text-sm</Code>,
+      size: "14/0.875",
+      example: <span className="text-sm">Aa</span>,
+    },
+    {
+      token: <Code>text-base</Code>,
+      size: "16/1",
+      example: <span className="text-base">Aa</span>,
+    },
+    {
+      token: <Code>text-lg</Code>,
+      size: "18/1.125",
+      example: <span className="text-lg">Aa</span>,
+    },
+    {
+      token: <Code>text-xl</Code>,
+      size: "20/1.25",
+      example: <span className="text-xl">Aa</span>,
+    },
+    {
+      token: <Code>text-2xl</Code>,
+      size: "24/1.5",
+      example: <span className="text-2xl">Aa</span>,
+    },
+    {
+      token: <Code>text-3xl</Code>,
+      size: "30/1.875",
+      example: <span className="text-3xl">Aa</span>,
+    },
+    {
+      token: <Code>text-4xl</Code>,
+      size: "36/2.25",
+      example: <span className="text-4xl">Aa</span>,
+    },
+    {
+      token: <Code>text-5xl</Code>,
+      size: "48/3",
+      example: <span className="text-5xl">Aa</span>,
+    },
+    {
+      token: <Code>text-6xl</Code>,
+      size: "60/3.75",
+      example: <span className="text-6xl">Aa</span>,
+    },
+    {
+      token: <Code>text-7xl</Code>,
+      size: "72/4.5",
+      example: <span className="text-7xl">Aa</span>,
+    },
+    {
+      token: <Code>text-8xl</Code>,
+      size: "96/6",
+      example: <span className="text-8xl">Aa</span>,
+    },
+    {
+      token: <Code>text-9xl</Code>,
+      size: "128/8",
+      example: <span className="text-9xl">Aa</span>,
+    },
+  ]}
+/>
+
+### Weight
+
+Weight table here...
+
+<Table
+  header={[
+    {
+      key: "token",
+      title: "Token",
+      className: "w-[40%]",
+    },
+    {
+      key: "value",
+      title: "Value",
+      className: "w-[40%]",
+    },
+    {
+      key: "example",
+      title: "Example",
+      className: "w-[20%]",
+    },
+  ]}
+  data={[
+    {
+      token: <Code>font-thin</Code>,
+      value: "font-weight: 100;",
+      example: <p className="font-thin">Aa</p>,
+    },
+    {
+      token: <Code>font-extralight</Code>,
+      value: "font-weight: 200;",
+      example: <p className="font-extralight">Aa</p>,
+    },
+    {
+      token: <Code>font-light</Code>,
+      value: "font-weight: 300;",
+      example: <p className="font-light">Aa</p>,
+    },
+    {
+      token: <Code>font-normal</Code>,
+      value: "font-weight: 400;",
+      example: <p className="font-normal">Aa</p>,
+    },
+    {
+      token: <Code>font-medium</Code>,
+      value: "font-weight: 500;",
+      example: <p className="font-medium">Aa</p>,
+    },
+    {
+      token: <Code>font-semibold</Code>,
+      value: "font-weight: 600;",
+      example: <p className="font-semibold">Aa</p>,
+    },
+    {
+      token: <Code>font-bold</Code>,
+      value: "font-weight: 700;",
+      example: <p className="font-bold">Aa</p>,
+    },
+    {
+      token: <Code>font-extrabold</Code>,
+      value: "font-weight: 800;",
+      example: <p className="font-extrabold">Aa</p>,
+    },
+    {
+      token: <Code>font-black</Code>,
+      value: "font-weight: 900;",
+      example: <p className="font-black">Aa</p>,
+    },
+  ]}
+/>
+
+### Body styles
+
+<Table
+  header={[
+    {
+      key: "token",
+      title: "Token",
+      className: "w-[30%]",
+    },
+    {
+      key: "usage",
+      title: "Usage",
+    },
+  ]}
+  data={[
+    {
+      token: (
+        <div>
+          <Code>body1-short</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 14px <br /> Line height: 18px <br />
+            Weight: Regular <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-body1-short">
+          This is for short paragraphs with no more than three lines and is
+          commonly used in components.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>body2-short</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 16px / 1rem <br /> Line height: 22px{" "}
+            <br />
+            Weight: Regular <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-body2-short">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>body1</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 14px <br /> Line height: 20px <br />
+            Weight: Regular <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-body1">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>body2</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 16px <br /> Line height: 24px <br />
+            Weight: Regular <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-body2">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+  ]}
+/>
+
+### Heading styles
+
+<Table
+  header={[
+    {
+      key: "token",
+      title: "Token",
+      className: "w-[30%]",
+    },
+    {
+      key: "usage",
+      title: "Usage",
+    },
+  ]}
+  data={[
+    {
+      token: (
+        <div>
+          <Code>heading-1</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 14px <br /> Line height: 20px <br />
+            Weight: Semibold <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-heading-1">
+          This is for short paragraphs with no more than three lines and is
+          commonly used in components.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>heading-1-short</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 14px <br /> Line height: 18px <br />
+            Weight: Semibold <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-heading-1-short">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>heading-2</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 16px <br /> Line height: 24px <br />
+            Weight: Semibold <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-heading-2">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>heading-2-short</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 16px <br /> Line height: 20px <br />
+            Weight: Semibold <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-heading-2-short">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>heading-3</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 20px <br /> Line height: 28px <br />
+            Weight: Semibold <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-heading-3">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>heading-4</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 24px <br /> Line height: 32px <br />
+            Weight: Semibold <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-heading-4">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>heading-5</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 30px <br /> Line height: 36px <br />
+            Weight: Semibold <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-heading-5">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>heading-6</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 36px <br /> Line height: 40px <br />
+            Weight: Semibold <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-heading-6">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>heading-7</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 48px <br /> Line height: 56px <br />
+            Weight: Semibold <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-heading-7">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+  ]}
+/>
+
+### Utility styles
+
+<Table
+  header={[
+    {
+      key: "token",
+      title: "Token",
+      className: "w-[30%]",
+    },
+    {
+      key: "usage",
+      title: "Usage",
+    },
+  ]}
+  data={[
+    {
+      token: (
+        <div>
+          <Code>label-1</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 12px <br /> Line height: 16px <br />
+            Weight: Regular <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-label-1">
+          This is for short paragraphs with no more than three lines and is
+          commonly used in components.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>label-2</Code>
+          <p className="mt-3">
+            Type: system ui <br /> Size: 14px / 1rem <br /> Line height: 18px{" "}
+            <br />
+            Weight: Regular <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-label-2">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>code-1</Code>,<Code>font-mono</Code>
+          <p className="mt-3">
+            Type: system ui, monospace <br /> Size: 12px <br /> Line height:
+            16px <br />
+            Weight: Regular <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-code-1 font-mono">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+    {
+      token: (
+        <div>
+          <Code>code-2</Code>,<Code>font-mono</Code>
+          <p className="mt-3">
+            Type: system ui, monospace <br /> Size: 14px <br /> Line height:
+            20px <br />
+            Weight: Regular <br /> Letter spacing: 0px
+          </p>
+        </div>
+      ),
+      usage: (
+        <span className="text-code-2 font-mono">
+          This is for short paragraphs with no more than three lines. Use in
+          expressive components, such as button and link.
+        </span>
+      ),
+    },
+  ]}
+/>

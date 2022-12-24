@@ -1,5 +1,6 @@
 // @ts-ignore
 import colors from "@te/tailwind-config/colors";
+import Code from "../Code";
 
 const header = [
   {
@@ -51,9 +52,7 @@ const ColorTokensTable = ({ data }: ColorTokensTableProps) => {
         {data.map((row, rowIdx) => (
           <tr key={rowIdx} className="group">
             <td className={`w-[220px] ${bodyCellClasses}`}>
-              <span className="px-3 py-2 bg-steelGray-10 rounded-[3px] whitespace-nowrap">
-                {row.token}
-              </span>
+              <Code>{row.token}</Code>
             </td>
             <td className={`w-[320px] ${bodyCellClasses}`}>{row.usage}</td>
             <td className={bodyCellClasses}>

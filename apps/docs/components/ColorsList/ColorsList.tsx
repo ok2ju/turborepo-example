@@ -1,5 +1,6 @@
 // @ts-ignore
 import colors from "@te/tailwind-config/colors";
+import Copyable from "../Copyable";
 
 const ColorsList = () => {
   return (
@@ -15,20 +16,22 @@ const ColorsList = () => {
             </div>
             <div className="flex-1 grid grid-cols-5 gap-x-6 gap-y-6">
               {Object.keys(colors[color]).map((tint, tintIdx) => (
-                <div key={tintIdx} className="relative cursor-pointer">
-                  <div
-                    className="h-9 w-full rounded-sm"
-                    style={{ backgroundColor: colors[color][tint] }}
-                  />
-                  <div className="flex flex-col mt-3">
-                    <span className="text-heading-1-short text-primary mb-2">
-                      {color}-{tint}
-                    </span>
-                    <span className="text-body1-short text-secondary uppercase">
-                      {colors[color][tint]}
-                    </span>
+                <Copyable key={tintIdx} text={`${color}-${tint}`}>
+                  <div className="relative cursor-pointer">
+                    <div
+                      className="h-9 w-full rounded-sm"
+                      style={{ backgroundColor: colors[color][tint] }}
+                    />
+                    <div className="flex flex-col mt-3">
+                      <span className="text-heading-1-short text-primary mb-2">
+                        {color}-{tint}
+                      </span>
+                      <span className="text-body1-short text-secondary uppercase">
+                        {colors[color][tint]}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Copyable>
               ))}
             </div>
           </div>

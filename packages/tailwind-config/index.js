@@ -1,6 +1,6 @@
 const spacing = require("./spacing");
 const colors = require("./colors");
-const typography = require("./typography");
+const { typography, weight, fontFamily } = require("./typography");
 
 // https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 module.exports = {
@@ -11,9 +11,7 @@ module.exports = {
   ],
   content_external: ["./node_modules/@te/core/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    spacing: {
-      ...spacing,
-    },
+    spacing,
     colors: {
       inherit: "inherit",
       current: "currentColor",
@@ -45,6 +43,8 @@ module.exports = {
       border: theme("colors.steelGray.20"),
     }),
     fontSize: typography,
+    fontWeight: weight,
+    fontFamily,
   },
   plugins: [],
 };
