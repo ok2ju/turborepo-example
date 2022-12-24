@@ -6,6 +6,7 @@ import SpacingTable from "../SpacingTable";
 import ColorsList from "../ColorsList";
 import ColorTokensTable from "../ColorTokensTable";
 import Playground from "../Playground";
+import Code from "../Code";
 import * as Demos from "../demos";
 
 interface HeadingProps {
@@ -55,8 +56,10 @@ export const MDXComponents = {
       </h6>
     </Link>
   ),
-  p: ({ children }: PropsWithChildren) => (
-    <p className="text-body-2 text-primary mb-4">{children}</p>
+  p: ({ children, ...props }: PropsWithChildren) => (
+    <p className="text-body-2 text-primary mb-4" {...props}>
+      {children}
+    </p>
   ),
   code: (props: PropsWithChildren<{ className: string }>) => {
     const { className, children } = props;
@@ -92,5 +95,6 @@ export const MDXComponents = {
   ColorsList,
   ColorTokensTable,
   Playground,
+  Code,
   ...Demos,
 };

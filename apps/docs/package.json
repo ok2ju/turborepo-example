@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.2",
     "@te/core": "*",
     "classnames": "^2.3.2",
+    "copy-to-clipboard": "^3.3.3",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
     "hast-util-has-property": "^2.0.0",
