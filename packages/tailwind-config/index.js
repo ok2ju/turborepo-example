@@ -27,7 +27,7 @@ module.exports = {
       primary: theme("colors.steelGray.90"),
       secondary: theme("colors.steelGray.60"),
       "on-color": theme("colors.white"),
-      disabled: theme("colors.white"),
+      disabled: theme("colors.steelGray.40"),
       "on-color-disabled": theme("colors.white"),
       placeholder: theme("colors.white"),
       error: theme("colors.gray.100"),
