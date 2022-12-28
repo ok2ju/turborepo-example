@@ -7,23 +7,29 @@ name: typography
 # Typography
 
 Typography is used to create clear hierarchies, useful organizations, and purposeful alignments that guide users through the product and experience. It is the core structure of any well designed interface.
+
 We use sans serif native system font families so that products load quickly and can be read efficiently across all devices. We uses a clear naming approach and type tokens to manage typography across complex and layered layouts and patterns.
 
 ### Scale
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Tokens to control font size and line height.
 
 <Table
   header={[
     {
       key: "token",
       title: "Token",
-      className: "w-[40%]",
+      className: "w-[30%]",
     },
     {
-      key: "size",
-      title: "Size px/rem",
-      className: "w-[40%]",
+      key: "fontSize",
+      title: "Font size px/rem",
+      className: "w-[25%]",
+    },
+    {
+      key: "lineHeight",
+      title: "Line height px/rem",
+      className: "w-[25%]",
     },
     {
       key: "example",
@@ -34,67 +40,80 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   data={[
     {
       token: <Code>text-xs</Code>,
-      size: "12/0.75",
+      fontSize: "12/0.75",
+      lineHeight: "16/1",
       example: <p className="text-xs">Aa</p>,
     },
     {
       token: <Code>text-sm</Code>,
-      size: "14/0.875",
+      fontSize: "14/0.875",
+      lineHeight: "20/1.25",
       example: <span className="text-sm">Aa</span>,
     },
     {
       token: <Code>text-base</Code>,
-      size: "16/1",
+      fontSize: "16/1",
+      lineHeight: "24/1.5",
       example: <span className="text-base">Aa</span>,
     },
     {
       token: <Code>text-lg</Code>,
-      size: "18/1.125",
+      fontSize: "18/1.125",
+      lineHeight: "28/1.75",
       example: <span className="text-lg">Aa</span>,
     },
     {
       token: <Code>text-xl</Code>,
-      size: "20/1.25",
+      fontSize: "20/1.25",
+      lineHeight: "28/1.75",
       example: <span className="text-xl">Aa</span>,
     },
     {
       token: <Code>text-2xl</Code>,
-      size: "24/1.5",
+      fontSize: "24/1.5",
+      lineHeight: "32/2",
       example: <span className="text-2xl">Aa</span>,
     },
     {
       token: <Code>text-3xl</Code>,
-      size: "30/1.875",
+      fontSize: "30/1.875",
+      lineHeight: "36/2.25",
       example: <span className="text-3xl">Aa</span>,
     },
     {
       token: <Code>text-4xl</Code>,
-      size: "36/2.25",
+      fontSize: "36/2.25",
+      lineHeight: "40/2.5",
       example: <span className="text-4xl">Aa</span>,
     },
     {
       token: <Code>text-5xl</Code>,
-      size: "48/3",
+      fontSize: "48/3",
+      lineHeight: "56/3.5",
       example: <span className="text-5xl">Aa</span>,
     },
     {
       token: <Code>text-6xl</Code>,
-      size: "60/3.75",
+      fontSize: "60/3.75",
+      lineHeight: "72/4.5",
       example: <span className="text-6xl">Aa</span>,
     },
     {
       token: <Code>text-7xl</Code>,
-      size: "72/4.5",
+      fontSize: "72/4.5",
+      lineHeight: "82/5.125",
       example: <span className="text-7xl">Aa</span>,
     },
     {
       token: <Code>text-8xl</Code>,
-      size: "96/6",
+      fontSize: "96/6",
+      lineHeight: "106/6.625",
       example: <span className="text-8xl">Aa</span>,
     },
     {
       token: <Code>text-9xl</Code>,
-      size: "128/8",
+      fontSize: "128/8",
+      lineHeight: "136/8.5",
       example: <span className="text-9xl">Aa</span>,
     },
   ]}
@@ -102,7 +121,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ### Weight
 
-Weight table here...
+Tokens to control font-weight.
 
 <Table
   header={[
@@ -171,7 +190,11 @@ Weight table here...
   ]}
 />
 
-### Body styles
+### Typography tokens
+
+Typography tokens description here...
+
+#### Body styles
 
 <Table
   header={[
@@ -181,84 +204,59 @@ Weight table here...
       className: "w-[30%]",
     },
     {
-      key: "usage",
-      title: "Usage",
+      key: "fontSize",
+      title: "Size px/rem",
+      className: "w-[15%]",
+    },
+    {
+      key: "lineHeight",
+      title: "Line height px/rem",
+      className: "w-[15%]",
+    },
+    {
+      key: "weight",
+      title: "Weight",
+      className: "w-[20%]",
+    },
+    {
+      key: "preview",
+      title: "Preview",
+      className: "w-[20%]",
     },
   ]}
   data={[
     {
-      token: (
-        <div>
-          <Code>body1-short</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 14px <br /> Line height: 18px <br />
-            Weight: Regular <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-body1-short">
-          This is for short paragraphs with no more than three lines and is
-          commonly used in components.
-        </span>
-      ),
+      token: <Code>body1-short</Code>,
+      fontSize: "14/0.875",
+      lineHeight: "18/1.125",
+      weight: "400/Regular",
+      preview: <p className="text-body1-short">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>body2-short</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 16px / 1rem <br /> Line height: 22px{" "}
-            <br />
-            Weight: Regular <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-body2-short">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>body2-short</Code>,
+      fontSize: "16/1",
+      lineHeight: "22/1.375",
+      weight: "400/Regular",
+      preview: <p className="text-body2-short">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>body1</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 14px <br /> Line height: 20px <br />
-            Weight: Regular <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-body1">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>body1</Code>,
+      fontSize: "14/0.875",
+      lineHeight: "20/1.25",
+      weight: "400/Regular",
+      preview: <p className="text-body1">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>body2</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 16px <br /> Line height: 24px <br />
-            Weight: Regular <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-body2">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>body2</Code>,
+      fontSize: "16/1",
+      lineHeight: "24/1.5",
+      weight: "400/Regular",
+      preview: <p className="text-body2">Aa</p>,
     },
   ]}
 />
 
-### Heading styles
+#### Heading styles
 
 <Table
   header={[
@@ -268,168 +266,94 @@ Weight table here...
       className: "w-[30%]",
     },
     {
-      key: "usage",
-      title: "Usage",
+      key: "fontSize",
+      title: "Size px/rem",
+      className: "w-[15%]",
+    },
+    {
+      key: "lineHeight",
+      title: "Line height px/rem",
+      className: "w-[15%]",
+    },
+    {
+      key: "weight",
+      title: "Weight",
+      className: "w-[20%]",
+    },
+    {
+      key: "preview",
+      title: "Preview",
+      className: "w-[20%]",
     },
   ]}
   data={[
     {
-      token: (
-        <div>
-          <Code>heading-1</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 14px <br /> Line height: 20px <br />
-            Weight: Semibold <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-heading-1">
-          This is for short paragraphs with no more than three lines and is
-          commonly used in components.
-        </span>
-      ),
+      token: <Code>heading-1</Code>,
+      fontSize: "14/0.875",
+      lineHeight: "20/1.25",
+      weight: "600/Semibold",
+      preview: <p className="text-heading-1">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>heading-1-short</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 14px <br /> Line height: 18px <br />
-            Weight: Semibold <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-heading-1-short">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>heading-1-short</Code>,
+      fontSize: "14/0.875",
+      lineHeight: "18/1.125",
+      weight: "600/Semibold",
+      preview: <p className="text-heading-1-short">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>heading-2</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 16px <br /> Line height: 24px <br />
-            Weight: Semibold <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-heading-2">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>heading-2</Code>,
+      fontSize: "16/1",
+      lineHeight: "24/1.5",
+      weight: "600/Semibold",
+      preview: <p className="text-heading-2">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>heading-2-short</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 16px <br /> Line height: 20px <br />
-            Weight: Semibold <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-heading-2-short">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>heading-2-short</Code>,
+      fontSize: "16/1",
+      lineHeight: "20/1.25",
+      weight: "600/Semibold",
+      preview: <p className="text-heading-2-short">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>heading-3</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 20px <br /> Line height: 28px <br />
-            Weight: Semibold <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-heading-3">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>heading-3</Code>,
+      fontSize: "20/1.25",
+      lineHeight: "28/1.75",
+      weight: "600/Semibold",
+      preview: <p className="text-heading-3">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>heading-4</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 24px <br /> Line height: 32px <br />
-            Weight: Semibold <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-heading-4">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>heading-4</Code>,
+      fontSize: "24/1.5",
+      lineHeight: "32/2",
+      weight: "600/Semibold",
+      preview: <p className="text-heading-4">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>heading-5</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 30px <br /> Line height: 36px <br />
-            Weight: Semibold <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-heading-5">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>heading-5</Code>,
+      fontSize: "30/1.875",
+      lineHeight: "36/2.25",
+      weight: "600/Semibold",
+      preview: <p className="text-heading-5">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>heading-6</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 36px <br /> Line height: 40px <br />
-            Weight: Semibold <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-heading-6">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>heading-6</Code>,
+      fontSize: "36/2.25",
+      lineHeight: "40/2.5",
+      weight: "600/Semibold",
+      preview: <p className="text-heading-6">Aa</p>,
     },
     {
-      token: (
-        <div>
-          <Code>heading-7</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 48px <br /> Line height: 56px <br />
-            Weight: Semibold <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-heading-7">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      token: <Code>heading-7</Code>,
+      fontSize: "48/3",
+      lineHeight: "56/3.5",
+      weight: "600/Semibold",
+      preview: <p className="text-heading-7">Aa</p>,
     },
   ]}
 />
 
-### Utility styles
+#### Utility styles
 
 <Table
   header={[
@@ -439,81 +363,62 @@ Weight table here...
       className: "w-[30%]",
     },
     {
-      key: "usage",
-      title: "Usage",
+      key: "fontSize",
+      title: "Size px/rem",
+      className: "w-[15%]",
+    },
+    {
+      key: "lineHeight",
+      title: "Line height px/rem",
+      className: "w-[15%]",
+    },
+    {
+      key: "weight",
+      title: "Weight",
+      className: "w-[20%]",
+    },
+    {
+      key: "preview",
+      title: "Preview",
+      className: "w-[20%]",
     },
   ]}
   data={[
     {
-      token: (
-        <div>
-          <Code>label-1</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 12px <br /> Line height: 16px <br />
-            Weight: Regular <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-label-1">
-          This is for short paragraphs with no more than three lines and is
-          commonly used in components.
-        </span>
-      ),
+      token: <Code>label-1</Code>,
+      fontSize: "12/0.75",
+      lineHeight: "16/1",
+      weight: "600/Semibold",
+      preview: <p className="text-label-1">Aa</p>,
+    },
+    {
+      token: <Code>label-2</Code>,
+      fontSize: "14/0.875",
+      lineHeight: "18/1.125",
+      weight: "600/Semibold",
+      preview: <p className="text-label-2">Aa</p>,
     },
     {
       token: (
-        <div>
-          <Code>label-2</Code>
-          <p className="mt-3">
-            Type: system ui <br /> Size: 14px / 1rem <br /> Line height: 18px{" "}
-            <br />
-            Weight: Regular <br /> Letter spacing: 0px
-          </p>
-        </div>
+        <>
+          <Code>font-mono</Code>,<Code>code-1</Code>
+        </>
       ),
-      usage: (
-        <span className="text-label-2">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      fontSize: "12/0.75",
+      lineHeight: "16/1",
+      weight: "600/Semibold",
+      preview: <p className="font-mono text-code-1">Aa</p>,
     },
     {
       token: (
-        <div>
-          <Code>code-1</Code>,<Code>font-mono</Code>
-          <p className="mt-3">
-            Type: system ui, monospace <br /> Size: 12px <br /> Line height:
-            16px <br />
-            Weight: Regular <br /> Letter spacing: 0px
-          </p>
-        </div>
+        <>
+          <Code>font-mono</Code>,<Code>code-2</Code>
+        </>
       ),
-      usage: (
-        <span className="text-code-1 font-mono">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
-    },
-    {
-      token: (
-        <div>
-          <Code>code-2</Code>,<Code>font-mono</Code>
-          <p className="mt-3">
-            Type: system ui, monospace <br /> Size: 14px <br /> Line height:
-            20px <br />
-            Weight: Regular <br /> Letter spacing: 0px
-          </p>
-        </div>
-      ),
-      usage: (
-        <span className="text-code-2 font-mono">
-          This is for short paragraphs with no more than three lines. Use in
-          expressive components, such as button and link.
-        </span>
-      ),
+      fontSize: "14/0.875",
+      lineHeight: "20/1.25 ",
+      weight: "600/Semibold",
+      preview: <p className="font-mono text-code-2">Aa</p>,
     },
   ]}
 />
