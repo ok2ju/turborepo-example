@@ -40,7 +40,7 @@ module.exports = {
     }),
     borderColor: ({ theme }) => ({
       ...theme("colors"),
-      border: theme("colors.steelGray.20"),
+      base: theme("colors.steelGray.20"),
     }),
     fontSize: typography,
     fontWeight: weight,

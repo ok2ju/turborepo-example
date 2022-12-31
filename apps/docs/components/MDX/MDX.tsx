@@ -6,6 +6,7 @@ import SpacingTable from "../SpacingTable";
 import ColorsList from "../ColorsList";
 import ColorTokensTable from "../ColorTokensTable";
 import Playground from "../Playground";
+import PlaygroundV2 from "../PlaygroundV2";
 import Code from "../Code";
 import * as Demos from "../demos";
 
@@ -95,6 +96,7 @@ export const MDXComponents = {
   ColorsList,
   ColorTokensTable,
   Playground,
+  PlaygroundV2,
   Code,
   ...Demos,
 };

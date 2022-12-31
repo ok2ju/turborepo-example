@@ -19,7 +19,7 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
 
   return (
     <div className="h-screen">
-      <div className="fixed top-0 left-0 right-0 px-6 border-b border-border w-full bg-background z-10">
+      <div className="fixed top-0 left-0 right-0 px-6 border-b border-base w-full bg-background z-10">
         <div className="flex justify-between items-center py-6">
           <Link href="/" className="flex items-center justify-start">
             <span className="sr-only">Your Company</span>
@@ -74,7 +74,7 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
             </div>
           </div>
           <div className="relative px-6 mt-10 bg-background z-10">
-            <div className="border-t border-border flex justify-between py-6">
+            <div className="border-t border-base flex justify-between py-6">
               <div>Logo here</div>
               <div className="flex items-center">
                 <div className="flex items-center">

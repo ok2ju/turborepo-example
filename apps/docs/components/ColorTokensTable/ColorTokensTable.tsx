@@ -26,7 +26,7 @@ export interface ColorTokensTableProps {
 }
 
 const bodyCellClasses =
-  "border-b border-border px-5 py-[10px] text-body1 text-primary group-last:border-0";
+  "border-b border-base px-5 py-[10px] text-body1 text-primary group-last:border-0";
 
 const ColorTokensTable = ({ data }: ColorTokensTableProps) => {
   const getPreviewColorValue = (token: string) => {
@@ -41,7 +41,7 @@ const ColorTokensTable = ({ data }: ColorTokensTableProps) => {
           {header.map((hcell, idx) => (
             <th
               key={idx}
-              className="border-b border-border text-heading-1-short px-5 py-4 text-primary text-left"
+              className="border-b border-base text-heading-1-short px-5 py-4 text-primary text-left"
             >
               {hcell.title}
             </th>
@@ -60,7 +60,7 @@ const ColorTokensTable = ({ data }: ColorTokensTableProps) => {
             </td>
             <td className={`w-[100px] ${bodyCellClasses}`}>
               <div
-                className="w-7 h-7 rounded-full border border-border"
+                className="w-7 h-7 rounded-full border border-base"
                 style={{ backgroundColor: getPreviewColorValue(row.value) }}
               />
             </td>
