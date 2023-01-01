@@ -1,0 +1,24 @@
+---
+metaTitle: "IDS: RadioGroup"
+metaDescription: RadioGroup description here.
+name: radioGroup
+---
+
+# RadioGroup
+
+<Description>RadioGroup description here...</Description>
+
+<PlaygroundV2
+  knobs={{
+    RadioGroup: ["orientation", "disabled", "required"],
+    RadioItem: ["disabled", "required"],
+  }}
+>
+  {`
+  <RadioGroup label="Fruits" defaultValue="apple">
+    <RadioItem label="Apple" value="apple" />
+    <RadioItem label="Orange" value="orange" />
+    <RadioItem label="Grape" value="grape" />
+  </RadioGroup>
+  `}
+</PlaygroundV2>

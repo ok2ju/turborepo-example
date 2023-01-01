@@ -8,7 +8,7 @@ import rehypeSlug from "rehype-slug";
 import { getAllFrontmatter, getMdxBySlug } from "../../lib/mdx";
 import { MDXComponents } from "../../components/MDX";
 import DocLayout from "../../components/DocLayout";
-import { nav, menu } from "../../constants/routes";
+import { menu } from "../../constants/routes";
 
 const components = { ...MDXComponents };
 
@@ -21,7 +21,7 @@ export default function ComponentsDoc({ source }: { source: any }) {
         <meta name="description" content={source.frontmatter.metaDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DocLayout nav={nav} menu={menu}>
+      <DocLayout menu={menu}>
         <MDXRemote {...source} components={components} />
       </DocLayout>
     </Fragment>

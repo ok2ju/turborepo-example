@@ -12,9 +12,11 @@ pre[class*="language-"] {
   box-sizing: border-box;
   border-radius: 0;
   overflow: auto;
-  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace !important;
+  font-size: 14px;
   line-height: 21px;
-  white-space: pre;
+  white-space: pre !important;
   position: relative;
   background-color: #fbfaff;
   color: #5746af;

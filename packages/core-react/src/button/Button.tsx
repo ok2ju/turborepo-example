@@ -36,7 +36,7 @@ export const Button = ({
   title,
   size = BUTTON_SIZE.default,
   type = BUTTON_TYPE.primary,
-  disabled,
+  disabled = false,
   onClick,
 }: ButtonProps) => {
   return (

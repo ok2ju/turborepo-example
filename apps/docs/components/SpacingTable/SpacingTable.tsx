@@ -2,9 +2,9 @@
 import spacing from "@te/tailwind-config/spacing";
 
 const headerCellClasses =
-  "text-heading-1-short border-b border-border px-5 py-4 text-primary text-left";
+  "text-heading-1-short border-b border-base px-5 py-4 text-primary text-left";
 const bodyCellClasses =
-  "border-b border-border px-5 py-[14px] text-body1 text-primary group-last:border-0";
+  "border-b border-base px-5 py-[14px] text-body1 text-primary group-last:border-0";
 
 const SpacingTable = () => {
   return (

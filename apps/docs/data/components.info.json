@@ -1,0 +1,135 @@
+{
+  "Button": {
+    "description": "",
+    "displayName": "Button",
+    "props": {
+      "title": {
+        "required": true,
+        "type": { "name": "string" },
+        "description": ""
+      },
+      "size": {
+        "required": false,
+        "type": {
+          "name": "enum",
+          "value": [
+            { "value": "small", "computed": false },
+            { "value": "default", "computed": false },
+            { "value": "big", "computed": false }
+          ]
+        },
+        "description": "",
+        "defaultValue": { "value": "default", "computed": true }
+      },
+      "type": {
+        "required": false,
+        "type": {
+          "name": "enum",
+          "value": [
+            { "value": "primary", "computed": false },
+            { "value": "secondary", "computed": false },
+            { "value": "danger", "computed": false }
+          ]
+        },
+        "description": "",
+        "defaultValue": { "value": "primary", "computed": true }
+      },
+      "disabled": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      }
+    }
+  },
+  "Accordion.Root": {
+    "description": "",
+    "displayName": "Accordion.Root",
+    "props": {
+      "collapsible": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      },
+      "disabled": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      }
+    }
+  },
+  "Accordion.Item": {
+    "description": "",
+    "displayName": "Accordion.Root",
+    "props": {
+      "disabled": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      }
+    }
+  },
+  "Checkbox": {
+    "description": "",
+    "displayName": "Checkbox",
+    "props": {
+      "checked": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      },
+      "required": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      },
+      "disabled": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      }
+    }
+  },
+  "RadioGroup": {
+    "description": "",
+    "displayName": "RadioGroup",
+    "props": {
+      "orientation": {
+        "required": false,
+        "type": {
+          "name": "enum",
+          "value": [
+            { "value": "horizontal", "computed": false },
+            { "value": "vertical", "computed": false }
+          ]
+        },
+        "description": ""
+      },
+      "required": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      },
+      "disabled": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      }
+    }
+  },
+  "RadioItem": {
+    "description": "",
+    "displayName": "RadioItem",
+    "props": {
+      "required": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      },
+      "disabled": {
+        "required": false,
+        "type": { "name": "boolean" },
+        "description": ""
+      }
+    }
+  }
+}

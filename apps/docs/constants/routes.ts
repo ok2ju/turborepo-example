@@ -1,23 +1,3 @@
-export interface NavItem {
-  key: string;
-  slug: string;
-}
-
-export const nav: Array<NavItem> = [
-  {
-    key: "home",
-    slug: "/",
-  },
-  {
-    key: "about",
-    slug: "/about",
-  },
-  {
-    key: "contact",
-    slug: "/contacts",
-  },
-];
-
 export interface MenuItem {
   key: string;
   slug: string;
@@ -71,12 +51,12 @@ export const menu = [
         slug: "/components/button",
       },
       {
-        key: "table",
-        slug: "/components/table",
+        key: "checkbox",
+        slug: "/components/checkbox",
       },
       {
-        key: "popover",
-        slug: "/components/popover",
+        key: "radioGroup",
+        slug: "/components/radioGroup",
       },
     ],
   },

@@ -2,45 +2,32 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import cx from "classnames";
-import { NavItem, MenuSection } from "../../constants/routes";
+import { MenuSection } from "../../constants/routes";
 import ActiveLink from "../ActiveLink";
 import { ScrollArea } from "../ScrollArea";
 import Toc from "./Toc";
 
 interface LayoutProps {
-  nav: Array<NavItem>;
   menu: Array<MenuSection>;
   toc?: Array<{}>;
   children: ReactNode;
 }
 
-const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
+const Layout = ({ menu, toc, children }: LayoutProps) => {
   const { t } = useTranslation("common");
 
   return (
     <div className="h-screen">
-      <div className="fixed top-0 left-0 right-0 px-6 border-b border-border w-full bg-background z-10">
-        <div className="flex justify-between items-center py-6">
+      <div className="fixed top-0 left-0 right-0 px-6 border-b border-base w-full bg-background z-20">
+        <div className="flex justify-between items-center h-[72px]">
           <Link href="/" className="flex items-center justify-start">
             <span className="sr-only">Your Company</span>
             <p className="ml-4 font-medium">Design System</p>
           </Link>
-          <nav className="flex space-x-7 ml-5">
-            {nav.map((item) => (
-              <ActiveLink
-                key={item.key}
-                href={item.slug}
-                activeClassName="active"
-                className="text-heading-1 text-secondary hover:text-gray-90 [&.active]:text-primary"
-              >
-                {t(`headerNav.${item.key}`)}
-              </ActiveLink>
-            ))}
-          </nav>
         </div>
       </div>
-      <div className="pt-[73px] h-full">
-        <div className="fixed left-0 top-[73px] bottom-0 w-[15rem]">
+      <div className="pt-[72px] h-full">
+        <div className="fixed left-0 top-[72px] bottom-0 w-[15rem]">
           <ScrollArea>
             <div className="p-6">
               {menu.map((item) => (
@@ -74,7 +61,7 @@ const Layout = ({ nav, menu, toc, children }: LayoutProps) => {
             </div>
           </div>
           <div className="relative px-6 mt-10 bg-background z-10">
-            <div className="border-t border-border flex justify-between py-6">
+            <div className="border-t border-base flex justify-between py-6">
               <div>Logo here</div>
               <div className="flex items-center">
                 <div className="flex items-center">
