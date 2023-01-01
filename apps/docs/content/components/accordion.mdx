@@ -11,38 +11,35 @@ name: accordion
   associated section of content.
 </Description>
 
-<Playground code={`import React from 'react';`}>
-  <AccordionDemo />
-</Playground>
-
 <PlaygroundV2
   knobs={{
-    'Accordion.Root': ["collapsible", "type"],
+    'Accordion.Root': ["collapsible", "disabled"],
+    'Accordion.Item': ["disabled"],
   }}
 >
   {`
-    <Accordion.Root
-      collapsible
-      type="single"
-      defaultValue="item-1"
-    >
-      <Accordion.Item value="item-1">
-        <Accordion.Header>What is te ui kit?</Accordion.Header>
-        <Accordion.Content>TE ui kit is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.</Accordion.Content>
-      </Accordion.Item>
+  <Accordion.Root
+    collapsible
+    type="single"
+    defaultValue="item-1"
+  >
+    <Accordion.Item value="item-1">
+      <Accordion.Header>What is te ui kit?</Accordion.Header>
+      <Accordion.Content>TE ui kit is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.</Accordion.Content>
+    </Accordion.Item>
 
-      <Accordion.Item value="item-2">
-        <Accordion.Header>Each primitive can be installed individually so you we adopt them incrementally?</Accordion.Header>
-        <Accordion.Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Accordion.Content>
-      </Accordion.Item>
+    <Accordion.Item value="item-2">
+      <Accordion.Header>Each primitive can be installed individually so you we adopt them incrementally?</Accordion.Header>
+      <Accordion.Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Accordion.Content>
+    </Accordion.Item>
 
-      <Accordion.Item value="item-3">
-        <Accordion.Header>Is it accessible?</Accordion.Header>
-        <Accordion.Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Accordion.Content>
-      </Accordion.Item>
-    </Accordion.Root>
+    <Accordion.Item value="item-3">
+      <Accordion.Header>Is it accessible?</Accordion.Header>
+      <Accordion.Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Accordion.Content>
+    </Accordion.Item>
 
-`}
+  </Accordion.Root>
+  `}
 
 </PlaygroundV2>
 

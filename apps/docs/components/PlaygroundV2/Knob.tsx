@@ -1,16 +1,16 @@
 import { useContext, ChangeEvent } from "react";
-import * as TeComponents from "@te/core";
+import { Checkbox, RadioGroup, RadioItem } from "@te/core";
 import { PlaygroundContext, ContextValues } from "./Context";
 
 const useDefaultProps = (componentPropsRegex: RegExp, code?: string) => {
   const match = code?.match(componentPropsRegex) || [];
+
   if (match !== null) {
     return match[1];
   }
+
   return "";
 };
-
-const primitiveTypes = ["string", "number", "boolean"];
 
 export interface KnobProps {
   initialCode?: string;
@@ -38,63 +38,59 @@ const Knob = ({
     initialCode
   ).slice(0, -1);
 
-  const handleChange =
-    (valueKey: string) => (event: ChangeEvent<HTMLInputElement>) => {
-      const value = event.target[valueKey];
-      console.log("value", typeof value);
+  const handleChange = (value: string | boolean) => {
+    const isSelfClosingTag =
+      defaultKnobProps.charAt(defaultKnobProps.length - 1) === "/";
 
-      const isSelfClosingTag =
-        defaultKnobProps.charAt(defaultKnobProps.length - 1) === "/";
+    const parsedKnobProps = isSelfClosingTag
+      ? defaultKnobProps.slice(0, -2)
+      : defaultKnobProps;
 
-      const parsedKnobProps = isSelfClosingTag
-        ? defaultKnobProps.slice(0, -2)
-        : defaultKnobProps;
-
-      const newKnobs = {
-        ...knobs,
-        [component]: {
-          ...(knobs as any)[component],
-          ...{ [name]: value },
-        },
-      };
-
-      const propString = parsedKnobProps.concat(
-        Object.entries((newKnobs as any)[component]).reduce(
-          (acc, [prop, value]) => {
-            if (value === undefined) {
-              return acc;
-            }
-
-            if (typeof value === "boolean") {
-              return `${acc} ${prop}={${value}}`;
-            }
-
-            return `${acc} ${prop}="${value}"`;
-          },
-          ""
-        )
-      );
-
-      setKnobs(newKnobs);
-
-      if (isSelfClosingTag) {
-        setCode(
-          code?.replace(
-            globalComponentPropsRegex,
-            `<${component}${propString} />`
-          ) || ""
-        );
-      } else {
-        setCode(
-          code?.replace(
-            globalComponentPropsRegex,
-            `<${component}${propString}>`
-          ) || ""
-        );
-      }
+    const newKnobs = {
+      ...knobs,
+      [component]: {
+        ...(knobs as any)[component],
+        ...{ [name]: value },
+      },
     };
 
-  if (definition.tsType.name === "boolean") {
+    const propString = parsedKnobProps.concat(
+      Object.entries((newKnobs as any)[component]).reduce(
+        (acc, [prop, value]) => {
+          if (value === undefined) {
+            return acc;
+          }
+
+          if (typeof value === "boolean") {
+            return `${acc} ${prop}={${value}}`;
+          }
+
+          return `${acc} ${prop}="${value}"`;
+        },
+        ""
+      )
+    );
+
+    setKnobs(newKnobs);
+
+    if (isSelfClosingTag) {
+      setCode(
+        code?.replace(
+          globalComponentPropsRegex,
+          `<${component}${propString} />`
+        ) || ""
+      );
+    } else {
+      setCode(
+        code?.replace(
+          globalComponentPropsRegex,
+          `<${component}${propString}>`
+        ) || ""
+      );
+    }
+  };
+
+  if (definition.type.name === "boolean") {
     let checked = false;
 
     if (definition.defaultValue && definition.defaultValue.value) {
@@ -107,42 +103,30 @@ const Knob = ({
 
     return (
       <div className="my-3">
-        <input
-          id={name}
-          type="checkbox"
-          checked={checked}
-          onChange={handleChange("checked")}
+        <Checkbox
+          label={name}
+          defaultChecked={checked}
+          onCheckedChange={handleChange}
         />
-        <label htmlFor={name} className="text-body1-short text-secondary">
-          {name}
-        </label>
       </div>
     );
   }
 
-  // Suppose it's `enum` type
-  if (!primitiveTypes.includes(definition.tsType.name)) {
-    const valueTypes = (TeComponents as any)[definition.tsType.name];
-    const [, checkedValue] = definition.defaultValue.value.split(".");
+  if (definition.type.name === "enum") {
+    const values: Array<{ value: string }> = definition.type.value;
+    const defaultValue = definition?.defaultValue?.value || undefined;
 
     return (
       <div className="my-3">
-        <p className="text-body1-short text-secondary">{name}</p>
-        <div>
-          {Object.keys(valueTypes).map((val, idx) => (
-            <div key={idx}>
-              <input
-                id={val}
-                type="radio"
-                name={val}
-                value={valueTypes[val]}
-                checked={valueTypes[val] === valueTypes[checkedValue]}
-                onChange={handleChange("value")}
-              />
-              <label htmlFor={val}>{val}</label>
-            </div>
+        <RadioGroup
+          label={name}
+          defaultValue={defaultValue}
+          onValueChange={handleChange}
+        >
+          {values.map((val, idx) => (
+            <RadioItem key={idx} label={val.value} value={val.value} />
           ))}
-        </div>
+        </RadioGroup>
       </div>
     );
   }

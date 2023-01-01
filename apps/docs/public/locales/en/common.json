@@ -21,8 +21,8 @@
       "sectionTitle": "Components",
       "accordion": "Accordion",
       "button": "Button",
-      "table": "Table - TBD",
-      "popover": "Popover - TBD"
+      "checkbox": "Checkbox",
+      "radioGroup": "RadioGroup"
     }
   },
   "footer": {

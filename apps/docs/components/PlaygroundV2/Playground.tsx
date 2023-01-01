@@ -3,10 +3,14 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import * as TeComponents from "@te/core";
 import { PlaygroundContextProvider } from "./Context";
 import Knobs from "./Knobs";
+import { ScrollArea } from "../ScrollArea";
 
 export interface PlaygroundProps {
   knobs: { [key: string]: Array<string> };
 }
+
+// Used to reset default `LiveEditor` styles
+const liveEditorTheme = { plain: {}, styles: [] };
 
 const Playground = ({
   knobs,
@@ -17,9 +21,14 @@ const Playground = ({
 
   return (
     <PlaygroundContextProvider>
-      <LiveProvider code={code} noInline={false} scope={{ ...TeComponents }}>
-        <div className="w-full flex border border-base rounded-md">
-          <div className="relative flex-1">
+      <LiveProvider
+        code={code}
+        noInline={false}
+        scope={{ ...TeComponents }}
+        theme={liveEditorTheme}
+      >
+        <div className="w-full flex border border-base mb-5">
+          <div className="relative flex flex-1 items-center justify-center">
             <div className="absolute inset-0 bg-[url('/grid-cell.svg')] [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))]" />
             <div className="relative flex items-center justify-center p-10 z-10">
               <LivePreview />
@@ -34,7 +43,13 @@ const Playground = ({
             />
           </div>
         </div>
-        <LiveEditor onChange={(updatedCode) => setCode(updatedCode)} />
+        <ScrollArea
+          style={{
+            maxHeight: "80vh",
+          }}
+        >
+          <LiveEditor onChange={(updatedCode) => setCode(updatedCode)} />
+        </ScrollArea>
         <LiveError />
       </LiveProvider>
     </PlaygroundContextProvider>

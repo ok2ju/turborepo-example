@@ -1,5 +1,5 @@
 import Knob from "./Knob";
-import docgen from "./docgen.json";
+import metadata from "../../data/components.info.json";
 
 interface KnobsProps {
   initialCode?: string;
@@ -10,7 +10,7 @@ interface KnobsProps {
 
 const Knobs = ({ initialCode, code, setCode, knobs }: KnobsProps) => {
   const requestedKnobs: Array<any> = Object.keys(knobs).map((component) => {
-    const definition = (docgen as any)[component];
+    const definition = (metadata as any)[component];
     const targetProps: { [key: string]: {} } = {};
 
     if (!definition) {
@@ -19,7 +19,7 @@ const Knobs = ({ initialCode, code, setCode, knobs }: KnobsProps) => {
 
     knobs[component].forEach((knob) => {
       const prop = definition.props[knob];
-      if (prop && prop.tsType) {
+      if (prop && prop.type) {
         targetProps[knob] = prop;
       }
     });

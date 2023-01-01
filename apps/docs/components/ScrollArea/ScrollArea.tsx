@@ -21,7 +21,7 @@ export const ScrollArea = React.forwardRef<
     return (
       <div
         {...scrollAreaProps}
-        style={{ overflow: "hidden", ...scrollAreaProps.css }}
+        style={{ overflow: "hidden", ...scrollAreaProps.style }}
       />
     );
   }
@@ -41,7 +41,7 @@ export const ScrollArea = React.forwardRef<
       </ScrollAreaPrimitive.Scrollbar>
       <ScrollAreaPrimitive.Scrollbar
         orientation="horizontal"
-        className="flex flex-col select-none touch-none p-1 w-[8px] h-[8px]"
+        className="flex flex-col select-none touch-none p-1 h-[8px]"
       >
         <ScrollAreaPrimitive.Thumb className={thumbClasses} />
       </ScrollAreaPrimitive.Scrollbar>
