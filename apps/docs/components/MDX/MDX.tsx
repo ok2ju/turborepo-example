@@ -8,7 +8,6 @@ import ColorTokensTable from "../ColorTokensTable";
 import Playground from "../Playground";
 import PlaygroundV2 from "../PlaygroundV2";
 import Code from "../Code";
-import * as Demos from "../demos";
 
 interface HeadingProps {
   id: string;
@@ -98,5 +97,4 @@ export const MDXComponents = {
   Playground,
   PlaygroundV2,
   Code,
-  ...Demos,
 };
