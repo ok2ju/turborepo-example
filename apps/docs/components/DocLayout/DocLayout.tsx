@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
-import cx from "classnames";
+import cx from "clsx";
 import { MenuSection } from "../../constants/routes";
 import ActiveLink from "../ActiveLink";
 import { ScrollArea } from "../ScrollArea";
