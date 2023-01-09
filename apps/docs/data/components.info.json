@@ -13,13 +13,13 @@
         "type": {
           "name": "enum",
           "value": [
-            { "value": "small", "computed": false },
-            { "value": "default", "computed": false },
-            { "value": "big", "computed": false }
+            { "value": "sm", "computed": false },
+            { "value": "md", "computed": false },
+            { "value": "lg", "computed": false }
           ]
         },
         "description": "",
-        "defaultValue": { "value": "default", "computed": true }
+        "defaultValue": { "value": "md", "computed": true }
       },
       "type": {
         "required": false,
@@ -28,6 +28,8 @@
           "value": [
             { "value": "primary", "computed": false },
             { "value": "secondary", "computed": false },
+            { "value": "tertiary", "computed": false },
+            { "value": "ghost", "computed": false },
             { "value": "danger", "computed": false }
           ]
         },
