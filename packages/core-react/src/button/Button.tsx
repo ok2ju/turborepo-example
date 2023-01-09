@@ -1,5 +1,5 @@
 import { SyntheticEvent } from "react";
-import cx from "classnames";
+import cx from "clsx";
 
 export enum BUTTON_SIZE {
   sm = "sm",
@@ -22,38 +22,38 @@ export enum BUTTON_TYPE {
 }
 
 const types = {
-  [BUTTON_TYPE.primary]: [
+  [BUTTON_TYPE.primary]: cx(
     "text-white",
     "bg-button-primary hover:bg-button-primary-hover active:bg-button-primary-active",
     "border-2 border-transparent",
     "focus:border-focus focus:shadow-[inset_0_0_0_2px] focus:shadow-white",
-    "disabled:text-on-color-disabled disabled:bg-button-disabled",
-  ].join(" "),
-  [BUTTON_TYPE.secondary]: [
+    "disabled:text-on-color-disabled disabled:bg-button-disabled"
+  ),
+  [BUTTON_TYPE.secondary]: cx(
     "text-primary",
     "bg-button-secondary hover:bg-button-secondary-hover active:bg-button-secondary-active",
     "border-2 border-transparent",
     "focus:border-focus focus:shadow-[inset_0_0_0_2px] focus:shadow-white",
-    "disabled:text-on-color-disabled disabled:bg-button-disabled",
-  ].join(" "),
-  [BUTTON_TYPE.tertiary]: [
+    "disabled:text-on-color-disabled disabled:bg-button-disabled"
+  ),
+  [BUTTON_TYPE.tertiary]: cx(
     "text-primary hover:text-on-color active:text-on-color focus:text-primary",
     "bg-white hover:bg-button-tertiary-hover active:bg-button-tertiary-active focus:bg-white",
     "border-[1px] border-focus",
-    "disabled:text-on-color-disabled disabled:bg-button-disabled disabled:border-transparent",
-  ].join(" "),
-  [BUTTON_TYPE.ghost]: [
+    "disabled:text-on-color-disabled disabled:bg-button-disabled disabled:border-transparent"
+  ),
+  [BUTTON_TYPE.ghost]: cx(
     "text-primary",
     "hover:bg-button-secondary-hover",
-    "disabled:text-on-color-disabled disabled:bg-transparent",
-  ].join(" "),
-  [BUTTON_TYPE.danger]: [
+    "disabled:text-on-color-disabled disabled:bg-transparent"
+  ),
+  [BUTTON_TYPE.danger]: cx(
     "text-on-color",
     "bg-button-danger-primary hover:bg-button-danger-hover active:bg-button-danger-active",
     "border-2 border-transparent",
     "focus:border-focus focus:shadow-[inset_0_0_0_2px] focus:shadow-white",
-    "disabled:text-on-color-disabled disabled:bg-button-disabled",
-  ].join(" "),
+    "disabled:text-on-color-disabled disabled:bg-button-disabled"
+  ),
 };
 
 interface ButtonProps {
