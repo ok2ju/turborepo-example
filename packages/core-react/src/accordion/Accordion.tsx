@@ -21,7 +21,7 @@ const Item = ({
   ...props
 }: AccordionPrimitive.AccordionItemProps) => (
   <AccordionPrimitive.Item
-    className="overflow-hidden mt-[1px] first:mt-0 first:rounded-t-[4px] last:rounded-b-[4px] focus-within:relative focus-within:z-1"
+    className="overflow-hidden mt-[1px] first:mt-4 first:rounded-t-[4px] last:rounded-b-[4px] focus-within:relative focus-within:z-1"
     {...props}
   >
     {children}
@@ -49,7 +49,7 @@ const Content = ({
   ...props
 }: AccordionPrimitive.AccordionContentProps) => (
   <AccordionPrimitive.Content
-    className="overflow-hidden bg-white text-body1 text-gray-50"
+    className="overflow-hidden bg-white text-body1 text-gray-10"
     {...props}
   >
     <div className="px-5 py-4">{children}</div>
