@@ -17,7 +17,7 @@ const Table = ({ header, data }: TableProps) => {
           {header.map((hcell, idx) => (
             <th
               key={idx}
-              className={`text-heading-1-short border-b border-base px-5 py-4 text-primary text-left ${hcell.className}`}
+              className={`text-heading-1-short border-t border-base px-5 py-4 text-primary text-left ${hcell.className}`}
             >
               {hcell.title}
             </th>
